@@ -1,0 +1,207 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/style.css">
+	<!-- Scripts -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-shapes-1.1.js"></script>
+	<script type="text/javascript">			
+		$(document).ready(function() { //Start up our Project Preview Carosuel
+			$('ul#folio_scroller').roundabout({
+				easing: 'easeOutInCirc',
+				shape: 'waterWheel',
+				duration: 600
+			});
+		});
+	</script>
+
+<script type="text/javascript">
+var collapseDivs, collapseLinks;
+
+function createDocumentStructure (tagName) {
+  if (document.getElementsByTagName) {
+    var elements = document.getElementsByTagName(tagName);
+    collapseDivs = new Array(elements.length);
+    collapseLinks = new Array(elements.length);
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      var siblingContainer;
+      if (document.createElement && 
+          (siblingContainer = document.createElement('div')) &&
+          siblingContainer.style) 
+      {
+        var nextSibling = element.nextSibling;
+        element.parentNode.insertBefore(siblingContainer, nextSibling);
+        var nextElement = elements[i + 1];
+        while (nextSibling != nextElement && nextSibling != null) {
+          var toMove = nextSibling;
+          nextSibling = nextSibling.nextSibling;
+          siblingContainer.appendChild(toMove);
+        }
+        siblingContainer.style.display = 'none';
+        
+        collapseDivs[i] = siblingContainer;
+        
+        createCollapseLink(element, siblingContainer, i);
+      }
+      else {
+        // no dynamic creation of elements possible
+        return;
+      }
+    }
+    createCollapseExpandAll(elements[0]);
+  }
+}
+
+function createCollapseLink (element, siblingContainer, index) {
+  var span;
+  if (document.createElement && (span = document.createElement('span'))) {
+    span.appendChild(document.createTextNode(String.fromCharCode(160)));
+    var link = document.createElement('a');
+    link.collapseDiv = siblingContainer;
+    link.href = '#';
+    link.appendChild(document.createTextNode('[+]'));
+    link.onclick = collapseExpandLink;
+    collapseLinks[index] = link;
+    span.appendChild(link);
+    element.appendChild(span);
+  }
+}
+
+function collapseExpandLink (evt) {
+  if (this.collapseDiv.style.display == '') {
+    this.parentNode.parentNode.nextSibling.style.display = 'none';
+    this.firstChild.nodeValue = '[+]';
+  }
+  else {
+    this.parentNode.parentNode.nextSibling.style.display = '';
+    this.firstChild.nodeValue = '[-]';
+  }
+
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function createCollapseExpandAll (firstElement) {
+  var div;
+  if (document.createElement && (div = document.createElement('div'))) {
+    var link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = expandAll;
+    div.appendChild(link);
+    div.appendChild(document.createTextNode(' '));
+    link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = collapseAll;
+    div.appendChild(link);
+    firstElement.parentNode.insertBefore(div, firstElement);
+  }
+}
+
+function expandAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = '';
+    collapseLinks[i].firstChild.nodeValue = '[-]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function collapseAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = 'none';
+    collapseLinks[i].firstChild.nodeValue = '[+]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+</script>
+<script type="text/javascript">
+window.onload = function (evt) {
+  createDocumentStructure('h4');
+}
+</script>
+</head>
+<body>
+<h1>Step 1: Scope</h1>
+<img src="img/headers/overview_sm.png" align="left"><h2>&nbsp;&nbsp;Overview</h2>
+<p>
+Scoping (or framing) to link to the decisions and decision-makers of interest is essential for framing appropriate scientific questions, improving the quality of analytical outputs, and increasing the likelihood that results are salient and accessible to stakeholders and policymakers. It can also create the conditions that enable success by clarifying the policy question and ecosystem services of interest, identifying local leaders and champions, and identifying whether a policy window has opened up or could open as the result of the research.
+</p>
+<img src="img/approach_Step1.png"><br>
+<a name="outputs"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/products_sm.png" align="left"><h2>&nbsp;&nbsp;Outputs</h2>
+<ul>
+<li>Established partnerships with clear roles and responsibilities for each individual or organization</li>
+<li>Clear understanding of the scientific or policy questions to be answered</li>
+<li>Work plan, including expected methodology and a feasible timeline</li>
+<li>Assessment and synthesis of relevant literature (e.g., literature review)</li> 
+<li>Preliminary assessment of available and needed data (e.g., gap analysis)</li>
+</ul>
+<a name="tips"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/tips_sm.png" align="left"><h2>&nbsp;&nbsp;Tips</h2>
+This step serves to link the decisions, decision-makers, and scientific support staff to improve the quality of scientific outputs and ensure that results are salient, accessible and designed to meet policy needs.  We find that scoping is most successful in driving action when it includes several essential tasks:
+<li>Defining partnerships, roles and objectives</li>
+<li>Setting a work plan</li>
+<li>Identifying key decision questions</li>
+<li>Selecting methods and tools for analysis</li>
+<li>Engaging stakeholders to exchange knowledge</li>
+<li>Developing a rapport and genuine respect between partners</li>
+<li>Ensuring plans are feasible given timelines and resources</li>
+<li>Identifying essential expertise (e.g., planner, project manager, GIS tech) and which phases these skills are required</li>
+<p></p>
+<a name="questions"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/scopeQ_sm.png" align="left"><h2>&nbsp;&nbsp;Sample MSP Scoping Questions</h2>
+<ul>
+<li>Is there a specific problem(s) people are rallying around?</i>
+<li>Which coastal and ocean sectors are <b>most relevant</b> to the planning process?</li>
+<li>How can an ecosystem service approach <b>aid</b> marine spatial planning?</li>
+<li>What are the <b>essential considerations</b> and <b>trade-offs</b> to be considered for the decision at hand?</li>
+<li>Who is at the table?  Which sectors, stakeholders and decision-makers should be engaged?</li>
+</ul>
+<a name="faq"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/faq_sm.png" align="left"><h2>&nbsp;&nbsp;Frequently Asked Questions (FAQ)</h2>
+<b>Q: Why is it important to spend time scoping?</b><br>
+<i>A: Early scoping saves time down the road.  By clearly outlining project objectives, scoping focuses efforts on the most important questions and ensures that the planning process will yield the best and highest impact results possible.</i><br>
+<p></p>
+<b>Q: How much scoping is enough?</b><br>
+<i>A: Scoping should match the scale of the project.  Scoping can start with a two-page description of work, but may end up as a months-long process (see our Barbados example).  Remember that scoping happens in stages and is an iterative process.  Data limitations, scenario development, or the synthesis from a first round of results, may require additional literature review, new partners, or the need for refined questions.</i><br>
+<p></p>
+<a name="links"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/links_sm.png" align="left"><h2>&nbsp;&nbsp;Links</h2>
+<ul>
+<li>Douvere, F. (2008). "The importance of marine spatial planning in advancing ecosystem-based sea use management." <i>Marine Policy</i>, 32(5), 762-771. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X0800064X" target="_blank">doi:10.1016/j.marpol.2008.03.021</a></li>
+<li>Foley, Melissa M., et al. "Guiding ecological principles for marine spatial planning." <i>Marine Policy</i> 34.5 (2010): 955-966. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X10000436" target="_blank">doi:10.1016/j.marpol.2010.02.001</a></li>
+<li>Ehler, Charles, and Fanny Douvere. "Marine spatial planning, a step-by-step approach towards ecosystem-based management." (2009). <a href="http://hdl.handle.net/1834/4475
+" target="_blank">http://hdl.handle.net/1834/4475</a></li>
+<li><a href="http://openchannels.org/" target="_blank"><b>OpenChannels</b></a> - An online community of ocean planners and managers sharing experience, knowledge, and advice with peers</li>
+<li><a href="http://searchmesh.org/default.aspx?page=1931" target="_blank"><b>MESH Scoping Tool</b></a> - A Flash interactive tool and guidance for undertaking an ocean  mapping/survey project</li>
+<li><a href="http://marineecosystemservices.org/" target="_blank"><b>Marine Ecosystem Services Partnership</b></a> - A searchable database of nearly 900 studies on marine ES valuation</li>
+<li><a href="http://bluesolutions.info/solutions/" target="_blank"><b>Blue Solutions</b></a> - A database of solutions to marine and coastal challenges that are impactful, scalable, and can be replicated</li>
+<li><a href="http://www.cmspadvancement.com/" target="_blank"><b>CMSP Advancement Training</b></a> - Free training in the United States for coastal managers and MSP practitioners</li>
+</ul>
+<p></p>
+<a name="use-cases"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/use-cases_sm.png" align="left"><h2>&nbsp;&nbsp;Use-Cases</h2>
+<p>Use the expand [+] button to learn more about this scoping step in the context of select NatCap use-cases.</p>
+<h4>Barbados</h4><p> To aid in a coastal management plan for Barbados, NatCap worked with key organizational partners to create a formal literature review and gap analysis for review by the Inter-American Development Bank (IDB).  The report outlined the provisioning, regulating, and cultural ecosystem services of interest and identified threats to these services.  The project team then collected, reviewed, and synthesized available literature and spatial data.  In addition to this synthesis, preliminary runs of select InVEST models were used to identify data gaps.  The literature review and data gap assessment not only organized key information, but also served as a method to gain consensus about the most important ecosystem services and the steps needed to complete a marine spatial plan.
+</p>
+<h4>Vancouver Island</h4><p>xxx</p>
+<h4>Belize</h4><p>xxx</p>
+<h4>New England</h4><p>xxx</p>
+</body>
+</html>

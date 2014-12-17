@@ -1,0 +1,214 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/style.css">
+	<!-- Scripts -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-shapes-1.1.js"></script>
+	<script type="text/javascript">			
+		$(document).ready(function() { //Start up our Project Preview Carosuel
+			$('ul#folio_scroller').roundabout({
+				easing: 'easeOutInCirc',
+				shape: 'waterWheel',
+				duration: 600
+			});
+		});
+	</script>
+
+<script type="text/javascript">
+var collapseDivs, collapseLinks;
+
+function createDocumentStructure (tagName) {
+  if (document.getElementsByTagName) {
+    var elements = document.getElementsByTagName(tagName);
+    collapseDivs = new Array(elements.length);
+    collapseLinks = new Array(elements.length);
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      var siblingContainer;
+      if (document.createElement && 
+          (siblingContainer = document.createElement('div')) &&
+          siblingContainer.style) 
+      {
+        var nextSibling = element.nextSibling;
+        element.parentNode.insertBefore(siblingContainer, nextSibling);
+        var nextElement = elements[i + 1];
+        while (nextSibling != nextElement && nextSibling != null) {
+          var toMove = nextSibling;
+          nextSibling = nextSibling.nextSibling;
+          siblingContainer.appendChild(toMove);
+        }
+        siblingContainer.style.display = 'none';
+        
+        collapseDivs[i] = siblingContainer;
+        
+        createCollapseLink(element, siblingContainer, i);
+      }
+      else {
+        // no dynamic creation of elements possible
+        return;
+      }
+    }
+    createCollapseExpandAll(elements[0]);
+  }
+}
+
+function createCollapseLink (element, siblingContainer, index) {
+  var span;
+  if (document.createElement && (span = document.createElement('span'))) {
+    span.appendChild(document.createTextNode(String.fromCharCode(160)));
+    var link = document.createElement('a');
+    link.collapseDiv = siblingContainer;
+    link.href = '#';
+    link.appendChild(document.createTextNode('[+]'));
+    link.onclick = collapseExpandLink;
+    collapseLinks[index] = link;
+    span.appendChild(link);
+    element.appendChild(span);
+  }
+}
+
+function collapseExpandLink (evt) {
+  if (this.collapseDiv.style.display == '') {
+    this.parentNode.parentNode.nextSibling.style.display = 'none';
+    this.firstChild.nodeValue = '[+]';
+  }
+  else {
+    this.parentNode.parentNode.nextSibling.style.display = '';
+    this.firstChild.nodeValue = '[-]';
+  }
+
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function createCollapseExpandAll (firstElement) {
+  var div;
+  if (document.createElement && (div = document.createElement('div'))) {
+    var link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = expandAll;
+    div.appendChild(link);
+    div.appendChild(document.createTextNode(' '));
+    link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = collapseAll;
+    div.appendChild(link);
+    firstElement.parentNode.insertBefore(div, firstElement);
+  }
+}
+
+function expandAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = '';
+    collapseLinks[i].firstChild.nodeValue = '[-]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function collapseAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = 'none';
+    collapseLinks[i].firstChild.nodeValue = '[+]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+</script>
+<script type="text/javascript">
+window.onload = function (evt) {
+  createDocumentStructure('h4');
+}
+</script>
+</head>
+<body>
+<h1>Step 3: Scenarios (Alternative Futures) </h1>
+<img src="img/headers/overview_sm.png" align="left"><h2>&nbsp;&nbsp;Overview</h2>
+<p>
+<td>Scenarios are plausible representations of alternative futures, useful for examining how action taken today may play out in the future. They are used to demonstrate how ecosystem services can change under various coastal management and restoration alternatives and indicate the synergies and trade-offs among options. With many changes to consider when policies or mechanisms are designed, scenarios provide an important tool for planning and designing interventions.
+</p>
+<img src="img/approach_Step3.png">
+<a name="outputs"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/products_sm.png" align="left"><h2>&nbsp;&nbsp;Outputs</h2>
+<ul>
+<li>At least two alternative scenarios to assess and compare different outcomes</li>
+<li>Data for each scenario should be prepared according the model or tool selected</li>
+</ul>
+<a name="tips"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/tips_sm.png" align="left"><h2>&nbsp;&nbsp;Tips</h2>
+<ul>
+<li>Scenarios reflected in InVEST are spatially-explicit (maps of land or ocean cover)
+<li>These changes in ecosystem services are driven by changes in the ecosystem structure and function (e.g., coastal-marine habitats)</li>
+<li>Explore our compilation of individual use-cases (below) to help find a scenario development tool that matches your project needs</li>
+</ul>
+<a name="conflicts"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/cc_sm.png" align="left"><h2>&nbsp;&nbsp;Conflicts & Compatibilities</h2>
+<p>When many competing ocean uses exist in an area, it may be a useful to identify conflicts and compatibilities between sectors.  We include this exercise in the Scenarios step because alternative visions for the future (scenarios) may results in different conflicts and varying compatibilities among uses.  Click on the image below to download an Excel template to use on your own.</p>
+<ul id="folio_scroller">
+<li><span>Indication of compatibility between sectors<br>from WWF's <a href="http://wwf.panda.org/what_we_do/where_we_work/baltic/threats/newmap/ " target="_blank">Future Trends in the Baltic Sea</a> report</span><a href="docs/conflicts_compatibilities.xlsx" target="_blank"><img alt="" src="img/conflict_compat.png" /></a></li>
+</ul>
+<p></p>
+<a name="tools"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/tools_sm.png" align="left"><h2>&nbsp;&nbsp;Scenario Development Tools and Use-Cases</h2>
+<p>Below we list some freely-available scenario development tools. Click on the sub-bullets to learn more about how they were applied for MSP use-cases.</p>
+<ol>
+<li><a href="http://umap.fluv.io/en/map/san-francisco_2368" target="_blank"><b>InSEAM</b></a> is a free online map annotation tool allowing multiple users to draw features on a base map.  These drawings and annotations can be organized and downloaded as digital layers to faciliate the scenario development process.  <i>Would you like to use InSEAM with your organization?  <a href="mailto:gverutes@stanford.edu?Subject=InSEAM" target="_top">E-mail us</a> for details!</i>
+<li><a href="http://www.seasketch.org/" target="_blank"><b>SeaSketch</b></a> is a tool for ocean planners, stakeholders and the public that enables participatory marine spatial planning processes
+<br>&#8226; <a href="http://www.seasketch.org/case-studies/2013/04/05/mapp.html" target="_blank">North Pacific Coast</a> - Marine Planning Partnership (MaPP) is integrating Marxan outputs in their SeaSketch project. MaPP is using the SeaSketch to draft protection management zones in four sub-regions, and discuss these with marine stakeholders.
+<br>&#8226; <a href="http://www.seasketch.org/case-studies/2014/05/28/doc.html" target="_blank">Hauraki Gulf (New Zealand) </a>- SeaSketch is being used by Stakeholder Working Group to create a marine spatial plan for the Hauraki Gulf Marine Park.  This plan is being developed to ensure the long-term maintenance and enhancement of the Gulf’s cultural, environmental, economic, and social values.
+<li><a href="http://www.csc.noaa.gov/digitalcoast/tools/hpp" target="_blank"><b>Habitat Priority Planner</b></a> aids in making decisions about conservation, restoration, and planning by providing a means for obtaining critical habitat analyses that are consistent, repeatable, and transparent</li>
+<li><a href="http://ncp-dev.stanford.edu/~dataportal/nightly-build/release_tip/release_tip/documentation/scenario_generator.html" target="_blank"><b>InVEST Scenario Generator</b></a> provides a relatively simple method for generating scenarios based on land use change suitability
+<br>&#8226; <a href="xxx" target="_blank">Vietnam</a> - xxx
+<li><a href="http://ncp-dev.stanford.edu/~dataportal/nightly-build/release_tip/release_tip/documentation/habitat_risk_assessment.html" target="_blank"><b>InVEST Habitat Risk Assessment </b></a>identifies where human activities create trade-offs among ES by posing risk that compromises habitat structure/function
+<br>&#8226; <a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">Belize</a> - was used to assess the combined risk to habitats (coral reefs, mangrove forests and seagrass beds) from multiple ocean uses. These results were used to inform the design of the country’s first Integrated Coastal Zone Management (ICZM) Plan.
+<li><a href="http://www.uq.edu.au/marxan/" target="_blank"><b>Marxan with Zones</b></a> facilitates design and configuration of protected area networks, to meet ecological, social, and economic objectives
+<br>&#8226; <a href="http://www.conservationgateway.org/ConservationByGeography/NorthAmerica/Caribbean/science/management/Documents/StKitts-Nevis-Full-Report.pdf" target="_blank">
+St. Kitts and Nevis</a> - Marxan with Zones generated a series of scenario-analysis maps and helped organize a wide range of information and assign actions to specific locations across the seascape.  This tool was used to support the zoning decision-making process in St. Kitts and Nevis.
+<li><a href="http://clarklabs.org/products/index.cfm" target="_blank"><b>IDRISI Land Change Modeler</b></a> allows users to rapidly analyze land cover change and simulate future land change scenarios</li>
+<li><a href="http://naturalcapitalproject.org" target="_blank"><b>Coastal RIOS</b></a> optimally sites habitat protection and restoration activities based on multiple planning objectives
+<br>&#8226; <a href="http://naturalcapitalproject.org" target="_blank">West Florida</a> - Coastal RIOS helped assess proposed actions following the Deepwater Horizon oil spill in the Gulf of Mexico, including the identification of best places to protect or restore seagrass, oyster, marsh, and dune habitats while balancing coastal protection, tourism and recreation, and fisheries objectives.
+</ol>
+<a name="faq"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/faq_sm.png" align="left"><h2>&nbsp;&nbsp;Frequently Asked Questions (FAQ)</h2>
+<b>Q: How can Marxan work with InVEST?</b><br>
+<i>A: xxx</i><br>
+<p><p>
+<b>Q: What is the best way to create scenarios?</b><br>
+<i>A: Scenario development is dependent on location, partners, and objectives.  Refer to our list scenarios development tools for ways to get started.</i><br>
+<p></p>
+<b>Q: Should scenarios be final?</b><br>
+<i>A: Not necessarily.  After preliminary analyses, scenarios can be iteratively refined to get at alternative outcomes that will help answer your research questions.</i><br>
+<p></p>
+<a name="links"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/links_sm.png" align="left"><h2>&nbsp;&nbsp;Links</h2>
+<ul>
+<li>Arkema, Katie K., et al. "Assessing habitat risk from human activities to inform coastal and marine spatial planning: a demonstration in Belize." <i>Environmental Research Letters</i> 9.11 (2014): 114016. <a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">doi:10.1088/1748-9326/9/11/114016</a></li>
+<li><a href="tradeoff.html"><b>Tradeoff! game</b></a> - A series of mapping games that challenge players to consider the consequences of development actions on ecosystems and the benefits they provide to people</li>
+<li><a href="http://naturalcapitalproject.org/pubs/ScenariosPrimer.pdf" target="_blank"><b>Scenario Primer</b></a> - A quick guide that introduces scenarios and how they can be used with InVEST. It also provides guidance on what makes an effective scenario, suggests goals and methods for developing scenarios, and illustrates how to convert scenarios into maps in InVEST.</li>
+<li><a href="http://www.naturalcapitalproject.org/pubs/ScenariosGuide.pdf" target="_blank"><b>Scenario Guidance and Case Studies</b></a> - A detailed resource for practitioners who want to assess ecosystem services under alternative scenarios. Drawing on case experiences, it provides guidance on scenario types and methods, engaging stakeholders, and creating scenario maps.</li>
+</ul>
+<p></p>
+<a name="use-cases"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/use-cases_sm.png" align="left"><h2>&nbsp;&nbsp;Use-Cases</h2>
+<p>Use the expand [+] button to learn more about this scenario design step in the context of select NatCap use-cases.</p>
+<h4>New England</h4><p>xxx</p>
+<h4>Vancouver Island</h4><p>xxx</p>
+<h4>Belize</h4><p>xxx</p>
+<h4>Barbados</h4><p>xxx</p>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+    font-family:verdana,arial,sans-serif;
+	font-size:10pt;
+    margin:30px;
+    line-height: 1.5em;
+    display: block;
+    background-color: #fff;
+}
+
+.content {
+    -moz-border-radius: 10px  10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    padding: 15px;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+h1, h2, h3, h4 {
+    color: #2f353e;
+}
+
+a {
+    color: #19a9e5;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1487b7;
+    text-decoration: underline;
+}
+
+table {
+    border-spacing: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+table tr:hover{
+    background-color: #f1eef6;
+}
+
+table th {
+    padding-left: 0px;
+    padding-right: 25px;
+	text-align: left;
+}
+
+table tr td,
+table tr th {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: 0px solid #ccc;
+}
+
+table tr th {
+    color: #039;
+	padding-right: 25px;
+    padding-left: 0px;
+	
+}
+
+table thead th{
+    border-bottom: 0px solid #000;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    color: #000;
+	
+}
+
+table td {
+    font-family: monospace;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+    padding-right: 50px;
+}
+
+table thead tr:hover {
+    background-color: #fff;
+}

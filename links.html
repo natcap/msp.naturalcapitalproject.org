@@ -1,0 +1,212 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/style.css">
+	<!-- Scripts -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-shapes-1.1.js"></script>
+	<script type="text/javascript">			
+		$(document).ready(function() { //Start up our Project Preview Carosuel
+			$('ul#folio_scroller').roundabout({
+				easing: 'easeOutInCirc',
+				shape: 'waterWheel',
+				duration: 600
+			});
+		});
+	</script>
+
+<script type="text/javascript">
+var collapseDivs, collapseLinks;
+
+function createDocumentStructure (tagName) {
+  if (document.getElementsByTagName) {
+    var elements = document.getElementsByTagName(tagName);
+    collapseDivs = new Array(elements.length);
+    collapseLinks = new Array(elements.length);
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      var siblingContainer;
+      if (document.createElement && 
+          (siblingContainer = document.createElement('div')) &&
+          siblingContainer.style) 
+      {
+        var nextSibling = element.nextSibling;
+        element.parentNode.insertBefore(siblingContainer, nextSibling);
+        var nextElement = elements[i + 1];
+        while (nextSibling != nextElement && nextSibling != null) {
+          var toMove = nextSibling;
+          nextSibling = nextSibling.nextSibling;
+          siblingContainer.appendChild(toMove);
+        }
+        siblingContainer.style.display = 'none';
+        
+        collapseDivs[i] = siblingContainer;
+        
+        createCollapseLink(element, siblingContainer, i);
+      }
+      else {
+        // no dynamic creation of elements possible
+        return;
+      }
+    }
+    createCollapseExpandAll(elements[0]);
+  }
+}
+
+function createCollapseLink (element, siblingContainer, index) {
+  var span;
+  if (document.createElement && (span = document.createElement('span'))) {
+    span.appendChild(document.createTextNode(String.fromCharCode(160)));
+    var link = document.createElement('a');
+    link.collapseDiv = siblingContainer;
+    link.href = '#';
+    link.appendChild(document.createTextNode('[+]'));
+    link.onclick = collapseExpandLink;
+    collapseLinks[index] = link;
+    span.appendChild(link);
+    element.appendChild(span);
+  }
+}
+
+function collapseExpandLink (evt) {
+  if (this.collapseDiv.style.display == '') {
+    this.parentNode.parentNode.nextSibling.style.display = 'none';
+    this.firstChild.nodeValue = '[+]';
+  }
+  else {
+    this.parentNode.parentNode.nextSibling.style.display = '';
+    this.firstChild.nodeValue = '[-]';
+  }
+
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function createCollapseExpandAll (firstElement) {
+  var div;
+  if (document.createElement && (div = document.createElement('div'))) {
+    var link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = expandAll;
+    div.appendChild(link);
+    div.appendChild(document.createTextNode(' '));
+    link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = collapseAll;
+    div.appendChild(link);
+    firstElement.parentNode.insertBefore(div, firstElement);
+  }
+}
+
+function expandAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = '';
+    collapseLinks[i].firstChild.nodeValue = '[-]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function collapseAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = 'none';
+    collapseLinks[i].firstChild.nodeValue = '[+]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+</script>
+<script type="text/javascript">
+window.onload = function (evt) {
+  createDocumentStructure('h4');
+}
+</script>
+</head>
+<body>
+<img src="img/headers/links_sm.png" align="left"><h1>&nbsp;&nbsp;Links</h1>
+<p>Use the expand [+] button to explore <b>readings and other online resources for each MSP step</b>.<br>Cross-cutting links (bridging multiple steps) are included at the bottom of this page.</p>
+<h4>Scope</h4>
+<p>
+<ul>
+<li>Douvere, F. (2008). "The importance of marine spatial planning in advancing ecosystem-based sea use management." <i>Marine Policy</i>, 32(5), 762-771. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X0800064X" target="_blank">doi:10.1016/j.marpol.2008.03.021</a></li>
+<li>Foley, Melissa M., et al. "Guiding ecological principles for marine spatial planning." <i>Marine Policy</i> 34.5 (2010): 955-966. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X10000436" target="_blank">doi:10.1016/j.marpol.2010.02.001</a></li>
+<li>Ehler, Charles, and Fanny Douvere. "Marine spatial planning, a step-by-step approach towards ecosystem-based management." (2009). <a href="http://hdl.handle.net/1834/4475
+" target="_blank">http://hdl.handle.net/1834/4475</a></li>
+<li><a href="http://searchmesh.org/default.aspx?page=1931" target="_blank"><b>MESH Scoping Tool</b></a> - A Flash interactive tool and guidance for undertaking an ocean  mapping/survey project</li>
+</ul>
+</p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>Data</h4>
+<ul>
+<li>Cornu, Elodie, et al. "Current Practice and Future Prospects for Social Data in Coastal and Ocean Planning." <i>Conservation Biology</i> (2014). <a href="http://onlinelibrary.wiley.com/doi/10.1111/cobi.12310/full" target="_blank">doi:10.1111/cobi.12310</a></li>
+<li>Kittinger, John N., et al. "A practical approach for putting people in ecosystem-based ocean planning." <i>Frontiers in Ecology and the Environment</i> 12.8 (2014): 448-456. <a href="http://dx.doi.org/10.1890/130267" target="_blank">http://dx.doi.org/10.1890/130267</a></li>
+<li>Koehn, J. Zachary, Daniel R. Reineman, and John N. Kittinger. "Progress and promise in spatial human dimensions research for ecosystem-based ocean planning." <i>Marine Policy</i> 42 (2013): 31-38. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X13000249" target="_blank">doi:10.1016/j.marpol.2013.01.015</a></li>
+<li><a href="http://csc.noaa.gov/digitalcoast/tools/list" target="_blank"><b>NOAA Digital Coast</b></a><br>
+- <a href="http://coast.noaa.gov/digitalcoast/tools/port" target="_blank">Port Resilience Planning Tool</a> - Identify potential considerations (e.g., hazards, transportation) for planning around ports (includes data for 26 US ports)<br>
+- <a href="http://coast.noaa.gov/digitalcoast/tools/snapshots" target="_blank">Coastal Country Snapshots</a> - Summarizes community economic dependence on the coast and its vulnerability<br>  
+- <a href="http://coast.noaa.gov/digitalcoast/tools/btm" target="_blank">Benthic Terrain Modeler</a> - Tools that scientists and resource managers can use with bathymetric data to classify and understand the benthic environment<br>
+- <a href="http://www.habitat.noaa.gov/protection/efh/efhmapper/" target="_blank">Essential Fish Habitat (EFH) Mapper</a> - Interactive platform for viewing habitats necessary to fish for spawning, breeding, feeding or growth to maturity<br>
+</li>
+</ul>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>Scenarios</h4>
+<ul>
+<li>Arkema, Katie K., et al. "Assessing habitat risk from human activities to inform coastal and marine spatial planning: a demonstration in Belize." <i>Environmental Research Letters</i> 9.11 (2014): 114016. <a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">doi:10.1088/1748-9326/9/11/114016</a></li>
+<li><a href="tradeoff.html"><b>Tradeoff! game</b></a> - A series of mapping games that challenge players to consider the consequences of development actions on ecosystems and the benefits they provide to people</li>
+<li><a href="http://naturalcapitalproject.org/pubs/ScenariosPrimer.pdf" target="_blank"><b>Scenario Primer</b></a> - A quick guide that introduces scenarios and how they can be used with InVEST. It also provides guidance on what makes an effective scenario, suggests goals and methods for developing scenarios, and illustrates how to convert scenarios into maps in InVEST.</li>
+<li><a href="http://www.naturalcapitalproject.org/pubs/ScenariosGuide.pdf" target="_blank"><b>Scenario Guidance and Case Studies</b></a> - A detailed resource for practitioners who want to assess ecosystem services under alternative scenarios. Drawing on case experiences, it provides guidance on scenario types and methods, engaging stakeholders, and creating scenario maps.</li>
+</ul>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>Analyze</h4>
+<ul>
+<li>Guerry, Anne D., et al. "Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning." <i>International Journal of Biodiversity Science, Ecosystem Services & Management</i> 8.1-2 (2012): 107-121. <a href="http://www.tandfonline.com/doi/abs/10.1080/21513732.2011.647835#.VIY3jNLF8aU" target="_blank">doi:10.1080/21513732.2011.647835</a></li>
+<li>Kim, Choong-Ki, et al. "Catching the Right Wave: Evaluating Wave Energy Resources and Potential Compatibility with Existing Marine and Coastal Uses." <i>PloS one</i> 7.11 (2012): e47598. <a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0047598#pone-0047598-g008" target="_blank">doi:10.1371/journal.pone.0047598</a></li>
+<li>Stelzenmüller, Vanessa, et al. "Practical tools to support marine spatial planning: a review and some prototype tools." <i>Marine Policy</i> 38 (2013): 214-227. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X12001364" target="_blank">doi:10.1016/j.marpol.2012.05.038</a></li>
+<li>White, Crow, Benjamin S. Halpern, and Carrie V. Kappel. "Ecosystem service tradeoff analysis reveals the value of marine spatial planning for multiple ocean uses." <i>Proceedings of the National Academy of Sciences</i> 109.12 (2012): 4696-4701. <a href="http://www.pnas.org/content/109/12/4696.short" target="_blank">doi: 10.1073/pnas.1114215109</a></li>
+<li><a href="http://ncp101.class.stanford.edu/" target="_blank"><b>NCP101</b></a> - A free online course developed by NatCap; modules 2-4 allow learners to apply select marine InVEST models using real data from Belize</li>
+<li><a href="http://www.marineplanning.org/Case_Studies/Case_Studies.html" target="_blank"><b>Marine Planning.org</b></a> - Case studies illustrating the use of MSP and ecosystem-based management (EBM) to address multiple objectives 
+</ul>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>Synthesize</h4>
+<ul>
+<li><a href="http://www.esri.com/news/arcuser/0112/files/design-principles.pdf" target="_blank"><b>Design principles</b></a> for mapmaking from ESRI (creators of ArcGIS software)</li>
+<li><a href="http://www.colorbrewer2.org" target="_blank"><b>Colorbrewer2.org</b></a> - An excellent resource for including vibrant and color-safe tones in your visuals</li>
+<li><a href="http://www.flowingdata.com" target="_blank"><b>Flowingdata.com</b></a> and <a href="http://www.visualizing.org" target="_blank"><b>Visualizing.org</b></a> - Data visualization ideas in blog format</li>
+</ul>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>Communicate</h4>
+<ul>
+<li>Ehler, Charles. "Conclusions: benefits, lessons learned, and future challenges of marine spatial planning." <i>Marine Policy</i> 32.5 (2008): 840-843. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X08000730" target="_blank">doi:10.1016/j.marpol.2008.03.014</a></li>
+<li>Merrie, Andrew, and Per Olsson. "An innovation and agency perspective on the emergence and spread of Marine Spatial Planning." <i>Marine Policy</i> 44 (2014): 366-374. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X13002315" target="_blank">doi:10.1016/j.marpol.2013.10.006</a></li>
+<li>Waite, Richard, et al. "Coastal capital: ecosystem valuation for decision making in the Caribbean</a>." World Resources Institute, 2014. <a href="http://eprints.soton.ac.uk/362289/" target="_blank">http://eprints.soton.ac.uk/id/eprint/362289</a></li>
+<li><a href="http://cartodb.com/" target="_blank"><b>CartoDB.com</b></a> and <a href="http://mapbox.com/" target="_blank"><b>Mapbox.com</b></a> - Free online tools for building professional web maps</li>
+</ul>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>Cross-Cutting Steps</h4>
+<ul>
+<li><a href="http://openchannels.org/" target="_blank"><b>OpenChannels</b></a> - An online community of ocean planners and managers sharing experience, knowledge, and advice with peers</li>
+<li><a href="http://www.ebmtools.org/" target="_blank"><b>EBM Tools Network</b></a> - Offers tools, training and webinars on coastal and marine planning and management</li>
+<li><a href="http://pacmara.org/tikiwiki/tiki-download_file.php?fileId=233" target="_blank"><b>Decision Guide: Selecting decision support tools for marine spatial planning</b></a> - Center for Ocean Solutions (COS) and PacMARA</li>
+<li><a href="http://marineecosystemservices.org/" target="_blank"><b>Marine Ecosystem Services Partnership</b></a> - A searchable database of nearly 900 studies on marine ES valuation</li>
+<li><a href="http://bluesolutions.info/solutions/" target="_blank"><b>Blue Solutions</b></a> - A database of solutions to marine and coastal challenges that are impactful, scalable, and can be replicated</li>
+<li><a href="http://www.cmspadvancement.com/" target="_blank"><b>CMSP Advancement Training</b></a> - Free training in the United States for coastal managers and MSP practitioners</li>
+</ul>
+<hr>
+&copy; Copyright</b> <a href="http://www.naturalcapitalproject.org" target="_blank">Natural Capital Project</a>
+<a class="float right" href="#">top</a>
+</body>
+</html>

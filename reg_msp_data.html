@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Regional MSP Databases</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+<div id='map'></div>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiZ2VvaW50ZXJlc3QiLCJhIjoiQ2czbnlDMCJ9.pQ-_LxzHCL6WqMm5rJrEWw';
+var map = L.mapbox.map('map', 'mapbox.world-light')
+  .setView([35, -120], 1);
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+// The GeoJSON representing the two point features
+var geojson = {
+    type: 'FeatureCollection',
+    features: [
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Northeast Ocean Data Portal',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://www.northeastoceandata.org/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-70.1, 42.8]
+        }
+    },
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Biodiversity and Environmental Resource Data System of Belize (BERDS)',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://www.biodiversity.bz/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-87.9, 16.8]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Mid-Atlantic Ocean Data Portal (MARCO)',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://portal.midatlanticocean.org/portal/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-75.2, 36.7]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'California DFW: Marine Region GIS Unit',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://www.dfg.ca.gov/marine/gis/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-122.7, 36.9]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'British Columbia Marine Conservation Analysis (BCMCA)',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://bcmca.ca/maps-data/overview/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.5, 49.5]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Coral Triangle (CT) Atlas',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://ctatlas.reefbase.org/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-238.1, -5.1]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Africa Marine Atlas',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://omap.africanmarineatlas.org/index.htm'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [7.1, 21.1]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Alaska Shorezone Coastal Mapping and Imagery',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://alaskafisheries.noaa.gov/shorezone/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-150, 64]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Australian Marine Spatial Information System (AMSIS)',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://www.ga.gov.au/scientific-topics/marine/jurisdiction/amsis'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-210.9, -35.3]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Baltic Sea Bathymetry Database',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://data.bshc.pro/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [20, 58]
+        }
+    },	
+	{
+        type: 'Feature',
+        properties: {
+            title: 'National Elevation Dataset (NED)',
+            'marker-color': '#3182bd',
+            'marker-size': 'small',
+            url: 'http://ned.usgs.gov/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-98, 38.5]
+        }
+    },	
+]
+};
+
+// Pass features and a custom factory function to the map
+myLayer.setGeoJSON(geojson);
+myLayer.on('click', function(e) {
+    e.layer.unbindPopup();
+    window.open(e.layer.feature.properties.url);
+});
+</script>
+</body>
+</html>
