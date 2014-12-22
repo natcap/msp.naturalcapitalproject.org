@@ -1,66 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-	<title></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/reset.css" />
-	<link rel="stylesheet" href="css/styles.css" />
-	
+<title></title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/style.css">
 	<!-- Scripts -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-	<!--[if IE 6]>
-	<script src="js/DD_belatedPNG_0.0.8a-min.js"></script>
-	<script>
-	  /* EXAMPLE */
-	  DD_belatedPNG.fix('.button');
-	  
-	  /* string argument can be any CSS selector */
-	  /* .png_bg example is unnecessary */
-	  /* change it to what suits you! */
+	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-shapes-1.1.js"></script>
+	<script type="text/javascript">			
+		$(document).ready(function() { //Start up our Project Preview Carosuel
+			$('ul#folio_scroller').roundabout({
+				easing: 'easeOutInCirc',
+				shape: 'waterWheel',
+				duration: 600
+			});
+		});
 	</script>
-	<![endif]-->
-	
 </head>
-
 <body>
+<h1>Contact</h1>
+<h2>The MSP Concierge Team</h2>
+<div id="wrapper" class="container_12 clearfix">
+	<div id="quicknav" class="grid_12">
+		<a class="quicknavgrid_3 quicknav alpha" href="http://www.naturalcapitalproject.org/people.html#Verutes" target="_blank">
+				<p style=""><img alt="Gregg Verutes" src="img/gregg.png" /></p>
+				<h4 class="title ">Gregg Verutes</h4>
+				<p>Author & Webmaster</p>
+			
+		</a>
+		<a class="quicknavgrid_3 quicknav" href="http://www.naturalcapitalproject.org/people.html#Wyatt" target="_blank">
+				<p style=""><img alt="Katherine Wyatt" src="img/katherine.png" /></p>
+				<h4 class="title ">Katherine Wyatt</h4>
+				<p>Contributing Author</p>
+			
+		</a>		
+		<a class="quicknavgrid_3 quicknav" href="http://www.naturalcapitalproject.org/people.html#Fisher" target="_blank">
+				<p style=""><img alt="Dave Fisher" src="img/dave.png" /> </p>					
+				<h4 class="title ">Dave Fisher</h4>
+				<p>Tool Development</p>
 
-	<br><br>
-	<h1>Contact</h1>
-		
-	<div id="wrapper" class="container_12 clearfix">
-		<div id="quicknav" class="grid_12">
-			<a class="quicknavgrid_3 quicknav alpha" href="http://www.naturalcapitalproject.org/people.html#Verutes" target="_blank">
-					<p style=""><img alt="Gregg Verutes" src="img/gregg.png" /></p>
-					<h4 class="title ">Gregg Verutes</h4>
-					<p>Author & Webmaster</p>
-				
-			</a>
-			<a class="quicknavgrid_3 quicknav" href="http://www.naturalcapitalproject.org/people.html#Wyatt" target="_blank">
-					<p style=""><img alt="Katherine Wyatt" src="img/katherine.png" /></p>
-					<h4 class="title ">Katherine Wyatt</h4>
-					<p>Contributing Author</p>
-				
-			</a>		
-			<a class="quicknavgrid_3 quicknav" href="http://www.naturalcapitalproject.org/people.html#Fisher" target="_blank">
-					<p style=""><img alt="Dave Fisher" src="img/dave.png" /> </p>					
-					<h4 class="title ">Dave Fisher</h4>
-					<p>Tool Development</p>
-
-			</a>
-			<a class="quicknavgrid_3 quicknav" href="http://www.naturalcapitalproject.org/people.html#Silver" target="_blank">
-					<p style=""><img alt="Jess Silver" src="img/jess.png" /> </p>
-					<h4 class="title ">Jess Silver</h4>
-					<p>Contributing Author</p>
-			</a>
-		</div>
-		<div class="hr dotted clearfix">&nbsp;</div>
-		<p>Many individuals from the Natural Capital Project contributed to this project.  We would like to thank...<br>
-		<b>Anne Guerry, Spencer Wood, Katie Arkema, Greg Guannel, Rob Griffin, Amy Rosenthal,<br>
-		Jodie Toft, Lauren Rogers, Joey Bernhardt, CK Kim, Joe Faries, Mike Papenfus, <br>
-		Jeremy Davies, Matt Marsik, Susan Langridge, and Mary Ruckelshaus</b></p>
-		<p>Development of this website was made possible through support from the <b>Gordon and Betty Moore Foundation</b>.</p>
-
+		</a>
+		<a class="quicknavgrid_3 quicknav" href="http://www.naturalcapitalproject.org/people.html#Silver" target="_blank">
+				<p style=""><img alt="Jess Silver" src="img/jess.png" /> </p>
+				<h4 class="title ">Jess Silver</h4>
+				<p>Contributing Author</p>
+		</a>
+	</div>
+</div>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h2>NatCap and MSP</h2>
+<a href="http://www.naturalcapitalproject.org/" target="_blank"><img src="img/logo_NatCap.jpg" align="left"></a>The <b><a href="http://www.naturalcapitalproject.org/" target="_blank">Natural Capital Project</a></b> (NatCap) aims to <b>integrate the values of nature into all major decisions affecting the environment and human well-being</b>. NatCap has developed practical, science-based approaches and <b><a href="http://www.naturalcapitalproject.org/toolbox.html" target="_blank">tools</a></b> that quantify, map, and value services provided by nature. Accounting for ES reveals the diverse benefits provided by nature, clarifies tradeoffs between alternative development scenarios, and helps make more informed decisions about how to use our coasts and waters.  While NatCap has some experience applying MSP, <u>we do not know, nor do, everything</u>.  Therefore, we have compiled helpful information from others in the MSP community and added our experience to the mix. 
+<p></p>
+<ul id="folio_scroller">
+<li><span>NatCap MSP Use-Cases</span><iframe width='600px' height='300px' frameBorder='0' src='natcap_msp_usecases.html'></iframe></li>
+</ul> 
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h2>Acknowledgements</h2>
+<p>Numerous colleagues from the Natural Capital Project contributed to this website.  We would like to thank...<br>
+<b>Anne Guerry, Spencer Wood, Katie Arkema, Greg Guannel, Rob Griffin, Amy Rosenthal,<br>
+Jodie Toft, Lauren Rogers, Joey Bernhardt, CK Kim, Joe Faries, Kelly Biedenweg,<br>
+Mike Papenfus, Jeremy Davies, Matt Marsik, Susan Langridge, and Mary Ruckelshaus</b></p>
+<p>Development of this website was made possible through support from the <b>Gordon and Betty Moore Foundation</b>.</p>
+<a class="float right" href="#">top</a>
 </body>
 </html>
