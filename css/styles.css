@@ -1,11 +1,11 @@
 /* Global Styles */
 
-	body								{background:url(../images/bg.png) repeat-x #FFFFFF; font-size:12px;	font-family:verdana,arial,sans-serif;; color:#000000;}
+	body								{background:url(../images/bg.png) repeat-x #FFFFFF; font-size:10.5px;	font-family:verdana,arial,sans-serif;; color:#000000;}
 	a:focus								{outline:1px dotted;}
 	a									{color:#717171; text-decoration:none;}
 	a:hover								{text-decoration:none;}
 	a span								{font-size:90%;}
-	h1									{font-size:25px;}
+	h1									{font-size:28px;}
 	h2									{font-size:23px;}
 	h3									{font-size:21px;}
 	h4									{font-size:13px;}
@@ -125,11 +125,10 @@
 
 	#quicknav							{background:url(../images/link_border.png) repeat-x;}
 	a .title 							{color:#000000;}
-	.quicknavgrid_3						{width:150px; margin:0px; padding:10px 10px 0; display:inline; float:left; position:relative; margin-left:1px;}
+	.quicknavgrid_3						{width:200px; margin:0px; padding:10px 10px 0; display:inline; float:left; position:relative; margin-left:1px;}
 	.quicknav							{background:#FFFFFF;}
-	.quicknav:hover						{background:url(../images/link_bg.png) repeat-x;}
 	.quicknavhr							{margin-bottom:0;}
-	.quicknav.alpha						{margin-left:0; width:150px;}
+	.quicknav.alpha						{margin-left:0; width:200px;}
 
 /* About Us Page Timeline */
 

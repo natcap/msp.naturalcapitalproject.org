@@ -20,7 +20,7 @@
 }
 #menu-v li a
 {
-    font: normal 12px verdana,arial,sans-serif;
+    font: normal 13px verdana,arial,sans-serif;
     border-top: 1px solid #ccc;
     display: block;
     /*overflow: auto; force hasLayout in IE7 */
@@ -32,7 +32,7 @@
 #menu-v ul li a
 {
     line-height:30px;
-	font: normal 11px verdana,arial,sans-serif;
+	font: normal 13px verdana,arial,sans-serif;
 }
                 
 #menu-v li a.arrow:hover
