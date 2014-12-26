@@ -2,7 +2,6 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Custom marker icons</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
@@ -15,119 +14,105 @@
 <div id='map'></div>
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiZ2VvaW50ZXJlc3QiLCJhIjoiQ2czbnlDMCJ9.pQ-_LxzHCL6WqMm5rJrEWw';
-var map = L.mapbox.map('map', 'examples.map-i87786ca')
+var map = L.mapbox.map('map', 'mapbox.world-light')
   .setView([15, -40], 2);
+  
+map.scrollWheelZoom.disable();
 
 var myLayer = L.mapbox.featureLayer().addTo(map);
 
-var geoJson = [{
-    "type": "Feature",
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-125.8, 49.0]
-    },
-    "properties": {
-        "title": "<a href=\"http://www.naturalcapitalproject.org/where/wcvi.html\" target=\"_blank\">West Coast Vancouver Island</a>",
-        "icon": {
-            "iconUrl": "img/icon_NatCap.jpg",
-            "iconSize": [39, 32],
-            "iconAnchor": [0, 25],
-            "popupAnchor": [0, 0],
-            "className": "dot"
-        }
-    }
-}, {
-    "type": "Feature",
-    "geometry": {
-        "type": "Point",
-        "coordinates": [33.3, -25.7]
-    },
-    "properties": {
-        "title": "<a href=\"http://www.naturalcapitalproject.org/where/mozambique.html\" target=\"_blank\">Mozambique</a>",
-        "icon": {
-            "iconUrl": "img/icon_NatCap.jpg",
-            "iconSize": [39, 32],
-            "iconAnchor": [0, 25],
-            "popupAnchor": [20, -25],
-            "className": "dot"
-        }
-    }
-}, {
-    "type": "Feature",
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-88.1, 17.3]
-    },
-    "properties": {
-        "title": "<a href=\"http://www.naturalcapitalproject.org/where/belize.html\" target=\"_blank\">Belize</a>",
-        "icon": {
-            "iconUrl": "img/icon_NatCap.jpg",
-            "iconSize": [39, 32],
-            "iconAnchor": [0, 25],
-            "popupAnchor": [20, -25],
-            "className": "dot"
-        }
-    }
-}, {
-    "type": "Feature",
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-59.5, 13.1]
-    },
-    "properties": {
-        "title": "<a href=\"http://www.naturalcapitalproject.org\" target=\"_blank\">Barbados</a>",
-        "icon": {
-            "iconUrl": "img/icon_NatCap.jpg",
-            "iconSize": [39, 32],
-            "iconAnchor": [0, 25],
-            "popupAnchor": [20, -25],
-            "className": "dot"
-        }
-    }
-}, {
-    "type": "Feature",
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-70.2, 42.9]
-    },
-    "properties": {
-        "title": "<a href=\"http://www.naturalcapitalproject.org/where/newengland.html\" target=\"_blank\">New England</a>",
-        "icon": {
-            "iconUrl": "img/icon_NatCap.jpg",
-            "iconSize": [39, 32],
-            "iconAnchor": [0, 25],
-            "popupAnchor": [20, -25],
-            "className": "dot"
-        }
-    }
-}, {
-    "type": "Feature",
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-122.7, 36.9]
-    },
-    "properties": {
-        "title": "<a href=\"http://www.naturalcapitalproject.org/where/california.html\" target=\"_blank\">California</a>",
-        "icon": {
-            "iconUrl": "img/icon_NatCap.jpg",
-            "iconSize": [39, 32],
-            "iconAnchor": [0, 25],
-            "popupAnchor": [20, -25],
-            "className": "dot"
-        }
-    }
-}];
 
-// Set a custom icon on each marker based on feature properties.
-myLayer.on('layeradd', function(e) {
-    var marker = e.layer,
-        feature = marker.feature;
+// The GeoJSON representing the two point features
+var geojson = {
+    type: 'FeatureCollection',
+    features: [
+	{
+        type: 'Feature',
+        properties: {
+            title: 'West Coast Vancouver Island',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://www.naturalcapitalproject.org/where/wcvi.html'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.8, 49.0]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Mozambique',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://www.naturalcapitalproject.org/where/mozambique.html'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [33.3, -25.7]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Belize',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://www.naturalcapitalproject.org/where/belize.html'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-88.1, 17.3]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Barbados',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://www.naturalcapitalproject.org/where/wherewework.html'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-59.5, 13.1]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'New England',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://www.naturalcapitalproject.org/where/newengland.html'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-70.2, 42.9]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'California',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://www.naturalcapitalproject.org/where/california.html'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-122.7, 36.9]
+        }
+    },	
+]
+};
 
-    marker.setIcon(L.icon(feature.properties.icon));
+// Pass features and a custom factory function to the map
+myLayer.setGeoJSON(geojson);
+myLayer.on('click', function(e) {
+    e.layer.unbindPopup();
+    window.open(e.layer.feature.properties.url);
 });
-
-// Add features to the map.
-myLayer.setGeoJSON(geoJson);
 </script>
 </body>
 </html>

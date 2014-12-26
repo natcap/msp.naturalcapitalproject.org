@@ -6,17 +6,17 @@
 	a:hover								{text-decoration:none;}
 	a span								{font-size:90%;}
 	h1									{font-size:28px;}
-	h2									{font-size:23px;}
-	h3									{font-size:21px;}
-	h4									{font-size:13px;}
-	h5									{font-size:17px;}
-	h6									{font-size:15px;}
+	h2									{font-size:21px;}
+	h3									{font-size:17px;}
+	h4									{font-size:14px;}
+	h5									{font-size:13px;}
+	h6									{font-size:11px;}
 	ol									{list-style:decimal;}
 	ul									{list-style:disc;}
 	li									{margin-left:20px; position:relative;}
 	p,
 	li,
-	dl									{line-height:18px;}
+	dl									{line-height:20px;}
 	p,
 	dl,
 	hr,

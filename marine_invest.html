@@ -1,0 +1,252 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="css/style.css">
+	<!-- Scripts -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-shapes-1.1.js"></script>
+	<script type="text/javascript">			
+		$(document).ready(function() { //Start up our Project Preview Carosuel
+			$('ul#folio_scroller').roundabout({
+				easing: 'easeOutInCirc',
+				shape: 'waterWheel',
+				duration: 600
+			});
+		});
+	</script>
+	
+<script type="text/javascript">
+var collapseDivs, collapseLinks;
+
+function createDocumentStructure (tagName) {
+  if (document.getElementsByTagName) {
+    var elements = document.getElementsByTagName(tagName);
+    collapseDivs = new Array(elements.length);
+    collapseLinks = new Array(elements.length);
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      var siblingContainer;
+      if (document.createElement && 
+          (siblingContainer = document.createElement('div')) &&
+          siblingContainer.style) 
+      {
+        var nextSibling = element.nextSibling;
+        element.parentNode.insertBefore(siblingContainer, nextSibling);
+        var nextElement = elements[i + 1];
+        while (nextSibling != nextElement && nextSibling != null) {
+          var toMove = nextSibling;
+          nextSibling = nextSibling.nextSibling;
+          siblingContainer.appendChild(toMove);
+        }
+        siblingContainer.style.display = 'none';
+        
+        collapseDivs[i] = siblingContainer;
+        
+        createCollapseLink(element, siblingContainer, i);
+      }
+      else {
+        // no dynamic creation of elements possible
+        return;
+      }
+    }
+    createCollapseExpandAll(elements[0]);
+  }
+}
+
+function createCollapseLink (element, siblingContainer, index) {
+  var span;
+  if (document.createElement && (span = document.createElement('span'))) {
+    span.appendChild(document.createTextNode(String.fromCharCode(160)));
+    var link = document.createElement('a');
+    link.collapseDiv = siblingContainer;
+    link.href = '#';
+    link.appendChild(document.createTextNode('[+]'));
+    link.onclick = collapseExpandLink;
+    collapseLinks[index] = link;
+    span.appendChild(link);
+    element.appendChild(span);
+  }
+}
+
+function collapseExpandLink (evt) {
+  if (this.collapseDiv.style.display == '') {
+    this.parentNode.parentNode.nextSibling.style.display = 'none';
+    this.firstChild.nodeValue = '[+]';
+  }
+  else {
+    this.parentNode.parentNode.nextSibling.style.display = '';
+    this.firstChild.nodeValue = '[-]';
+  }
+
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function createCollapseExpandAll (firstElement) {
+  var div;
+  if (document.createElement && (div = document.createElement('div'))) {
+    var link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = expandAll;
+    div.appendChild(link);
+    div.appendChild(document.createTextNode(' '));
+    link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = collapseAll;
+    div.appendChild(link);
+    firstElement.parentNode.insertBefore(div, firstElement);
+  }
+}
+
+function expandAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = '';
+    collapseLinks[i].firstChild.nodeValue = '[-]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function collapseAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = 'none';
+    collapseLinks[i].firstChild.nodeValue = '[+]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+</script>
+<script type="text/javascript">
+window.onload = function (evt) {
+  createDocumentStructure('h4');
+}
+</script>
+	
+</head>
+<body>
+<h1>InVEST</h1>
+<img src="img/headers/overview_sm.png" align="left"><h2>&nbsp;&nbsp;Overview</h2>
+<img src="img/logo_InVEST.jpg" align="left">InVEST is a suite of software models used to <b>map and value the goods and services from nature that sustain and fulfill human life</b>.  The toolkit can aid decision makers to assess quantified tradeoffs associated with alternative management choices and to identify areas where investment in natural capital can enhance human development and conservation.
+<p></p>
+Some of the models within InVEST can be applied for coastal-marine ecosystem assessment, planning and management.
+<b><a href="http://www.naturalcapitalproject.org/download.html" target="_blank">Click here</a></b> to download the latest version of InVEST.
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/tools_sm.png" align="left"><h2>&nbsp;&nbsp;Marine InVEST for MSP</h2>
+Use the expand [+] button to learn more about InVEST models and tools that can be applied for MSP.
+<p></p>
+<h4>&#8226; Coastal Blue Carbon</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Estimates the current amount of carbon stored in coastal-marine ecosystems and values the amount of sequestered carbon over time</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/blue_carbon.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/blue_carbon.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Belize</td></tr>
+<tr><td><b>Publications</b></td><td>None</td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Coastal Vulnerability</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Uses geophysical and natural habitat characteristics of coastal landscapes to compare their exposure to erosion and flooding in severe weather</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/coastal_vulnerability.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/coastal_vulnerability.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Barbados | Belize | California | Mozambique | New England | Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Arkema, Katie K., et al. "Coastal habitats shield people and property from sea-level rise and storms." <i>Nature Climate Change</i> (2013). <a href="docs/Arkema_etal_2013_NCC.pdf" target="_blank">doi:10.1038/nclimate1944</a><br>Langridge, Suzanne M., et al. "Key lessons for incorporating natural infrastructure into regional climate adaptation planning." <i>Ocean & Coastal Management</i> 95 (2014): 189-197. <a href="docs/Langridge_etal_2014_OCM.pdf" target="_blank">doi:10.1016/j.ocecoaman.2014.03.019</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Coastal Protection</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Quantifies the protective services provided by nearshore habitats in terms of avoided erosion and flood mitigation</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.youtube.com/embed/RZJKZR5JpDc" target="_blank">Video</a> | <a href="http://www.naturalcapitalproject.org/models/coastal_protection.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/coastal_protection.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Barbados | Belize | California | Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Guannel, Greg, et al. "Integrated modeling framework to quantify the coastal protection services supplied by vegetation." <i>Journal of Geophysical Research: Oceans</i> (2014). <a href="docs/Guannel_etal_2014_JGR.pdf" target="_blank">doi: 10.1002/2014JC009821</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Finfish Aquaculture</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Estimates the weight and economic value of Atlantic salmon grown in netpen aquaculture facilities</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/marine_fish_aquaculture.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/marine_fish.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>None</td></tr>
+</table>
+<p></p>
+<h4>&#8226; Habitat Risk Assessment</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Evaluates risks posed to multiple habitats in terms of exposure to human activities and the habitat-specific consequence of that exposure for delivery of environmental services</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.youtube.com/embed/EMOJa-XklB0" target="_blank">Video</a> | <a href="http://www.naturalcapitalproject.org/models/habitat_risk.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/habitat_risk_assessment.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Barbados | Belize | Mozambique | Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Arkema, Katie K., et al. "Assessing habitat risk from human activities to inform coastal and marine spatial planning: a demonstration in Belize." <i>Environmental Research Letters</i> 9.11 (2014): 114016. <a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">doi:10.1088/1748-9326/9/11/114016</a><br>Guerry, Anne D., et al. "Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning." <i>International Journal of Biodiversity Science, Ecosystem Services & Management</i> 8.1-2 (2012): 107-121. <a href="docs/Guerry_etal_2012_IJBSESM.pdf" target="_blank">doi:10.1080/21513732.2011.647835</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Marine Water Quality</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Assesses how management and human activities influence the water quality and structure of coastal and estuarine ecosystems</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/marine_water_quality.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/marine_water_quality.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Guerry, Anne D., et al. "Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning." <i>International Journal of Biodiversity Science, Ecosystem Services & Management</i> 8.1-2 (2012): 107-121. <a href="docs/Guerry_etal_2012_IJBSESM.pdf" target="_blank">doi:10.1080/21513732.2011.647835</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Overlap Analysis</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Estimates the relative importance of regions for human use; outputs can help decision-makers weigh potential conflicts among spatially-explicit management options that involve new activities or new infrastructure</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/overlap_analysis.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/overlap_analysis.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Belize | New England | Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Kim, Choong-Ki, et al. "Catching the Right Wave: Evaluating Wave Energy Resources and Potential Compatibility with Existing Marine and Coastal Uses." <i>PloS one</i> 7.11 (2012): e47598. <a href="docs/Kim_etal_2012_PLOSONE.pdf" target="_blank">doi:10.1371/journal.pone.0047598</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Offshore Wind Energy</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Measures the electricity generation potential of wind over ocean and large lake surfaces</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/wind_energy.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/wind_energy.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>New England</td></tr>
+<tr><td><b>Publications</b></td><td>None</td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Recreation and Tourism</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Predicts the spread of person-days of recreation, based on the locations of natural habitats and other features that factor into people’s decisions about where to recreate</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.youtube.com/embed/lHYXhCx-MzI" target="_blank">Video</a> | <a href="http://www.naturalcapitalproject.org/models/recreation.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/recreation.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Barbados | Belize | California | Mozambique | New England | Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Wood, Spencer A., et al. "Using social media to quantify nature-based tourism and recreation." <i>Scientific reports</i> 3 (2013). <a href="docs/Wood_etal_2013_NSR.pdf" target="_blank">doi:10.1038/srep02976</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Scenic Quality</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Employs viewshed analysis to estimate the visibility of features or objects such as coastal development, clear-cuts or aquaculture facilities</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/scenic_quality.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/scenic_quality.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Barbados | California | New England | Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Verutes, Gregory M., et al. "Exploring scenarios of light pollution from coastal development reaching sea turtle nesting beaches near Cabo Pulmo, Mexico." <i>Global Ecology and Conservation</i> (2014): 170-180. <a href="http://www.sciencedirect.com/science/article/pii/S2351989414000274" target="_blank">doi:10.1016/j.gecco.2014.09.001</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Wave Energy</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Measures and values the electricity generation potential of ocean waves</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/wave_energy.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/wave_energy.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>California | Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Kim, Choong-Ki, et al. "Catching the Right Wave: Evaluating Wave Energy Resources and Potential Compatibility with Existing Marine and Coastal Uses." <i>PloS one</i> 7.11 (2012): e47598. <a href="docs/Kim_etal_2012_PLOSONE.pdf" target="_blank">doi:10.1371/journal.pone.0047598</a></td></tr>
+</table>
+<p></p>
+<a class="float right" href="#">top</a>
+<p></p><br>
+</body>
+</html>
