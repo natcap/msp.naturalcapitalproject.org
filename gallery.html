@@ -10,27 +10,35 @@
     <link href='http://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
 
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    // GOOGLE ANALYTICS 
+    //     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    //     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    //     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    //     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-38721366-3', 'christopheviau.com');
-        ga('send', 'pageview');
+    //     ga('create', 'UA-38721366-3', 'christopheviau.com');
+    //     ga('send', 'pageview');
 
     </script>
 
 </head>
 <body>
-<div class="info">D3.js Gallery <span class="example-count"></span> | <a href="./index.html">Static list</a> | <a class="about-link" href="">About</a></div>
+<div class="info">MSP Gallery <span class="example-count"></span> | <a class="about-link" href="">About</a></div>
 <div class="about-box">
 
     <div class="about-close" style="cursor: pointer;">x</div>
 
     <div class="about-content">
-        You can contribute to this gallery on the <a href="https://docs.google.com/spreadsheet/ccc?key=0AqMEGBUNwXeHdDJ5N0cwUHp4RWVGWkUyVUZrZWVTX2c&usp=drive_web#gid=0">Google Spreadsheet</a> or improving it on <a href="https://github.com/biovisualize/d3visualization">GitHub</a>. <br>
-        Every entry in this gallery is copyrighted by its author. Feel free to <a href="https://github.com/biovisualize/d3visualization/issues">file a request</a> for correcting errors.<br>
-        This gallery is developed by Christophe Viau <a href="https://twitter.com/d3visualization">@d3visualization</a> with the help of the community and support from <a href="http://www.datameer.com/">Datameer</a>. Special thanks to <a href="https://twitter.com/mrejfox">@mrejfox</a> for styling.
+        <!-- You can contribute to this gallery on the <a href="https://docs.google.com/spreadsheet/ccc?key=0AqMEGBUNwXeHdDJ5N0cwUHp4RWVGWkUyVUZrZWVTX2c&usp=drive_web#gid=0">Google Spreadsheet</a> or improving it on <a href="https://github.com/biovisualize/d3visualization">GitHub</a>. <br> -->
+        <h3>About</h3>
+        This is a gallery of figures that display results from a variety of marine spatial planning projects and marine ecosystem service mapping projects. This gallery is a place to get ideas and see examples of effective ways to present data on these themes. 
+        <br>
+        <br>
+        To suggest an addition to the gallery please email ______@____ (SUBJECT: "MSP Viz Gallery") with a url to a figure (or send the figure as an attachement), along with a short caption and the author's name.
+        Every entry in this gallery is copyrighted by its author. Feel free to email or <a href="https://github.com/geointerest/msp_concierge_master/issues">submit a message</a> for correcting errors or suggesting improvements for this site.
+        <br>
+        <h3>Credits</h3>
+        The code for this gallery was developed for the <a href="http://biovisualize.github.io/d3visualization/">d3js gallery</a> by Christophe Viau <a href="https://twitter.com/d3visualization">@d3visualization</a> with the help of the community and support from <a href="http://www.datameer.com/">Datameer</a> and <a href="https://twitter.com/mrejfox">@mrejfox</a>.
     </div>
 
 </div>
@@ -91,7 +99,8 @@
 
     // d3.csv('https://docs.google.com/spreadsheet/pub?key=0AqMEGBUNwXeHdHpQNlVuY29SUE5BSXVtS3JueGlNYVE&single=true&gid=0&output=csv', function(error, _json){
     //d3.csv('https://docs.google.com/spreadsheets/d/1j_6Zqpp0H5m9nTjQemC-sq0I4gUbDvA5lH9Und7pK88/export?gid=0&format=csv', function(error, _json){
-    d3.csv('./vizgallery/vizgallery_test.csv', function(error, _json){
+    //d3.csv('vizgallery_test.csv', function(error, _json){
+    d3.csv('https://docs.google.com/spreadsheets/d/1j_6Zqpp0H5m9nTjQemC-sq0I4gUbDvA5lH9Und7pK88/export?gid=0&format=csv', function(error, _json){
         json = _json;
         d3.select('.example-count').text('(' + json.length + 'examples!)');
         buildList(dataTransformMenu1(), '.menu1-container', data1);
