@@ -100,7 +100,7 @@
 
     // d3.csv('https://docs.google.com/spreadsheet/pub?key=0AqMEGBUNwXeHdHpQNlVuY29SUE5BSXVtS3JueGlNYVE&single=true&gid=0&output=csv', function(error, _json){
     //d3.csv('https://docs.google.com/spreadsheets/d/1j_6Zqpp0H5m9nTjQemC-sq0I4gUbDvA5lH9Und7pK88/export?gid=0&format=csv', function(error, _json){
-    d3.csv('./vizgallery/vizgallery_test.csv', function(error, _json){
+    d3.csv('gallery/vizgallery_test.csv', function(error, _json){
     //d3.csv('https://docs.google.com/spreadsheets/d/1j_6Zqpp0H5m9nTjQemC-sq0I4gUbDvA5lH9Und7pK88/export?gid=0&format=csv', function(error, _json){
         json = _json;
         d3.select('.example-count').text('(' + json.length + 'examples!)');
