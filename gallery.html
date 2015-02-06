@@ -80,7 +80,9 @@
         html: function(d, i){
             var content = d.title;
             if(d.author) content += ' '+'<span class="author">'+d.author+'</span>';
+            // content += ' '+'<span title="">'+"Description"+'</span>';
             if(d.thumbnail) content += "<br /> <img src='"+d.thumbnail+"' class='thumbnail'/><br />";
+            content += '<span class="text-content"><span>'+d.desc+'</span></span>';
             return content;}
     };
 

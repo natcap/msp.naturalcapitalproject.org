@@ -55,6 +55,7 @@ div{
     float: left;
     overflow: hidden;
     display: inline-block;
+    position: relative;
     margin: 1%;
     margin-right: 18px;
     border-left: 4px solid #CCC;
@@ -68,6 +69,9 @@ div{
     -webkit-box-shadow:0 0 6px 0 rgba(0,0,0,0.45); /* Saf3.0+, Chrome */
     -moz-box-shadow:0 0 6px 0 rgba(0,0,0,0.45); /* FF3.5+ */
     box-shadow:0 0 6px 0 rgba(0,0,0,0.45); /* Opera 10.5, IE 9.0 */
+}
+#list li:hover span.text-content{
+    opacity: 1;
 }
 li {
     list-style: none;
@@ -160,4 +164,23 @@ li a:hover {
 }
 .example-count{
 	color: darkgreen;
+}
+
+span.text-content {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 200px;
+  left: 20;
+  position: absolute;
+  top: 0;
+  width: 200px;
+  opacity: 0;
+}
+ 
+span.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
