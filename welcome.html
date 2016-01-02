@@ -1,6 +1,7 @@
 <html>
 <head>
-<title></title>
+<title></title>  
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" href="css/styles.css" />
 <link rel="stylesheet" href="css/style.css">
@@ -18,6 +19,51 @@
 			});
 		});
 	</script>
+
+<style>
+ 
+.popup{
+position:fixed;
+width:100%;
+height:100%;
+left:0px;
+right:0px;
+top: 0px;
+bottom:0px;
+background-color:rgba(3,3,3,0.8);
+}
+ 
+.popupWindow{
+background-color:#000000;
+margin:0px auto;
+width:40%;
+min-width:400px;
+min-height:200px;
+margin-top:8%;
+text-align: center;
+-moz-border-radius: 50px 50px / 50px 50px;
+border-radius: 50px 50px / 50px 50px;
+box-shadow: 5px 5px 5px #717171;
+}
+ 
+.popup_txt{
+font-size:26px;
+font-weight:bold;
+margin:10px;
+padding-top:20px;
+color:white;
+}
+ 
+.popup_img{
+margin:10px;
+}
+ 
+.popup_img_yes{
+margin:10px;
+}
+ 
+</style>
+
 <!-- Google Analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -27,8 +73,18 @@
   ga('create', 'UA-787904-11', 'auto');
   ga('send', 'pageview');
 </script>
+
+<script>
+$(document).ready(function(){
+    $( ".close" ).click(function() {
+                $( ".popup" ).fadeOut( 1200 );
+  });
+});
+</script>
+
 </head>
 <body>
+
 <h1>Marine Planning Concierge</h1>
 <p>As 50 million people are born each year and similar numbers seek to raise their standard of living, the Earth's marine ecosystems face expanding pressure from fisheries, aquaculture, energy production, runoff from land, shipping, recreation, climate change, and more (<a href="http://www.millenniumassessment.org/en/index.html" target="_blank">Millennium Ecosystem Assessment 2005</a>, <a href="docs/Halpern_etal_2008_Science.pdf" target="_blank">Halpern et al. 2008</a>, and others). <u>With careful planning</u>, we can continue to derive benefits from oceans and coasts while protecting the natural capital that sustains life. <u>Without careful planning</u>, human activities will likely further degrade the oceans and squander the potential benefits provided by healthy marine ecosystems. To maintain and enhance the myriad benefits available from marine ecosystems, it has become clear that our oceans and coasts need better planning.
 <p></p>The concept of <b>marine planning</b> (also called <i>marine spatial planning</i>, <i>maritime planning</i>, <i>coastal development planning</i>, among other terms) calls for marine systems to be <b>managed for multiple uses, in ways that account for diverse benefits delivered by ecosystems to people</b>, and that guide the patterns and types of use to sustain ocean productivity for the needs of present and future generations (<a href="https://www.cbd.int/doc/publications/ea-text-en.pdf" target="_blank">Convention on Biological Diversity 2004</a>, <a href="https://www.whitehouse.gov/files/documents/OPTF_FinalRecs.pdf" target="_blank">CEQ 2010</a>, <a href="http://ec.europa.eu/environment/marine/pdf/1_EN_ACT.pdf" target="_blank">European Commission 2011</a>, <a href="http://www.un.org/depts/los/ecosystem_approaches/ecosystem_approaches.htm" target="_blank">UN General Assembly 2010</a>).  
@@ -99,5 +155,23 @@ Learning about different marine planning projects can highlight methods and tool
 <p></p>
 <a class="float right" href="#">top</a>
 <p></p><br>
+
+<div class="popup"> <!-- popup content start || copy this to the end of the file-->
+        <div class="popupWindow">
+                <div class="popup_txt">News and Updates</div>
+                <font color="white">
+                <i>January 2016</i>
+                <p></p>
+                <p align="left">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Call for Abstracts: <a href="https://natcap2016.wordpress.com" target="_blank">2016 Natural Capital Symposium</a><br>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Leave us your comments and <a href="feedback.html">feedback</a><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Contribute to the <a href="gallery.html">gallery</a> by uploading your visuals</a>
+                </p>
+                </font>
+                <div class="popup_img">
+                        <img src="img/close.png" class="close"/>
+                </div>
+        </div>
+</div>  <!-- popup content ends -->
 </body>
 </html>
