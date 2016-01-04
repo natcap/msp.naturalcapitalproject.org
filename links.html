@@ -144,6 +144,15 @@ window.onload = function (evt) {
   ga('create', 'UA-787904-11', 'auto');
   ga('send', 'pageview');
 </script>
+
+<script>
+	function change(top, bottom)
+	{
+	parent.top_frame.location=top;
+	parent.content.location=bottom;
+	} 		
+</script>
+
 </head>
 <body>
 <img src="img/headers/links_sm.png" align="left"><h1>&nbsp;&nbsp;Links</h1>
@@ -217,7 +226,7 @@ Use the expand [+] button to explore readings and other online resources for eac
 <li>Makino, Azusa, et al. "Incorporating conservation zone effectiveness for protecting biodiversity in marine planning." <i>PloS one</i> 8.11 (2013): e78986. <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0078986" target="_blank">doi:10.1371/journal.pone.0078986</a></li>
 <li>Stelzenmüller, Vanessa, et al. "Practical tools to support marine spatial planning: a review and some prototype tools." <i>Marine Policy</i> 38 (2013): 214-227. <a href="docs/Stelzenmüller_etal_2013_MP.pdf" target="_blank">doi:10.1016/j.marpol.2012.05.038</a></li>
 <li>Villa, Ferdinando, et al. "A methodology for adaptable and robust ecosystem services assessment." <i>PloS one</i> 9.3 (2014): e91001. <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0091001#pone-0091001-g004" target="_blank">doi:10.1371/journal.pone.0091001</a></li>
-<li>White, Crow, Benjamin S. Halpern, and Carrie V. Kappel. "Ecosystem service tradeoff analysis reveals the value of marine spatial planning for multiple ocean uses." <i>Proceedings of the National Academy of Sciences</i> 109.12 (2012): 4696-4701. <a href="White_etal_2012_PNAS.pdf" target="_blank">doi: 10.1073/pnas.1114215109</a></li>
+<li>White, Crow, Benjamin S. Halpern, and Carrie V. Kappel. "Ecosystem service tradeoff analysis reveals the value of marine spatial planning for multiple ocean uses." <i>Proceedings of the National Academy of Sciences</i> 109.12 (2012): 4696-4701. <a href="docs/White_etal_2012_PNAS.pdf" target="_blank">doi: 10.1073/pnas.1114215109</a></li>
 <li><a href="http://ncp101.class.stanford.edu/" target="_blank">NCP-101</a> - A free online course developed by NatCap; modules 2-4 allow learners to apply select marine InVEST models using real data from Belize</li>
 <li><a href="http://www.marineplanning.org/Case_Studies/Case_Studies.html" target="_blank">Marine Planning.org</a> - Case studies illustrating the use of marine planning and ecosystem-based management (EBM) to address multiple objectives 
 <li><a href="http://www.ebmtools.org/" target="_blank">EBM Tools Network</a> - Offers tools, training and webinars on coastal and marine planning and management</li>
@@ -229,7 +238,7 @@ Use the expand [+] button to explore readings and other online resources for eac
 <li><a href="http://www.colorbrewer2.org" target="_blank">Colorbrewer2.org</a> - An excellent resource for including vibrant and color-safe tones in your visuals</li>
 <li><a href="http://www.esri.com/news/arcuser/0112/files/design-principles.pdf" target="_blank">Design principles</a> for mapmaking from ESRI (creators of ArcGIS software)</li>
 <li><a href="http://www.flowingdata.com" target="_blank">Flowingdata.com</a> and <a href="http://www.visualizing.org" target="_blank">Visualizing.org</a> - Data visualization ideas in blog format</li>
-<li><a href="gallery.html" target="_blank">Visualization Gallery</a> - Browse maps and figures from other marine planning applications to get ideas for your own</li>
+<li><a href="javascript:change('top.html', 'gallery.html')">Visualization Gallery</a> - Browse maps and figures from other marine planning applications to get ideas for your own</li>
 </ul>
 <div class="hr dotted clearfix">&nbsp;</div>
 <h4>6. Communicate</h4>

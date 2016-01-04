@@ -144,24 +144,33 @@ window.onload = function (evt) {
   ga('create', 'UA-787904-11', 'auto');
   ga('send', 'pageview');
 </script>
+
+<script>
+	function change(top, bottom)
+	{
+	parent.top_frame.location=top;
+	parent.content.location=bottom;
+	} 		
+</script>
+
 </head>
 <body>
 <h1>Iterate</h1>
 <img src="img/headers/overview_sm.png" align="left"><h2>&nbsp;&nbsp;Overview</h2>
 Iteration is key to using ecosystem services approaches in marine spatial planning.   By <b>iteration</b> we mean <b>repeatedly revisiting one step or many steps in the science-policy process to improve results over time</b>.  Engaging stakeholders and local experts will allow you to share preliminary outputs to get feedback, enhance the transparency of your process, create buy-in, and build capacity to use ecosystem service approaches in MSP.  Iteration is extremely important for making progress in a complicated process like marine spatial planning.  It allows you and your partners to move forward and better understand what science and information is really needed to inform decision-making, rather than get stuck trying to perfect the results from a particular step.
 <p></p>
-Iteration can occur within each step, and over the entire process.  For example, <b><a href="scope.html">Scoping</a></b> (step 1) involves defining a problem and identifying key partnerships and stakeholders.  These partners and stakeholders will bring additional insights, issues, and capacities to the process, which can in turn influence ecosystem service priorities, scenarios and synthesis. Also, the <b><a href="data.html">Compile Data</a></b> and <b><a href="analyze.html">Analyze</a></b> steps often benefit from iteration.  Starting your analysis with readily available data, even if it is coarse, can help identify critical data gaps and encourage local institutions and stakeholders to participate in the process and contribute better information. Communicating results to new audiences will help identify new questions that require further data collection, scenario development, analysis, or synthesis.  Finally, through iteration you can use the outputs from your ecosystem service analysis to inform changes you want to make to improve your spatial plan (i.e., revise the <a href="scenarios.html"><b>Build Scenarios</b></a> step).  This is an approach we used in our work in Belize and explain below in the use-case section.
+Iteration can occur within each step, and over the entire process.  For example, <b><a href="javascript:change('top_scope.html', 'scope.html')">Scoping</a></b> (step 1) involves defining a problem and identifying key partnerships and stakeholders.  These partners and stakeholders will bring additional insights, issues, and capacities to the process, which can in turn influence ecosystem service priorities, scenarios and synthesis. Also, the <b><a href="javascript:change('top_data.html', 'data.html')">Compile Data</a></b> and <b><a href="javascript:change('top_analyze.html', 'analyze.html')">Analyze</a></b> steps often benefit from iteration.  Starting your analysis with readily available data, even if it is coarse, can help identify critical data gaps and encourage local institutions and stakeholders to participate in the process and contribute better information. Communicating results to new audiences will help identify new questions that require further data collection, scenario development, analysis, or synthesis.  Finally, through iteration you can use the outputs from your ecosystem service analysis to inform changes you want to make to improve your spatial plan (i.e., revise the <a href="javascript:change('top_scenarios.html', 'scenarios.html')"><b>Build Scenarios</b></a> step).  This is an approach we used in our work in Belize and explain below in the use-case section.
 <p></p>
-The following is a diagram of an approach for ecosystem service assessment, that we have found useful in our engagements (see further details in <a href="docs/Rosenthal_etal_2014_IJBSESM.pdf" target="_blank">Rosenthal et al. 2014</a>). Iteration is critical within each step of the process (orange inset) and between steps (inset again) for the entire process to be effective. We find that revisiting steps 1-3 after <b><a href="synthesize.html">Synthesize</a></b> (step 5) are the most common pathways for iteration; however, other trajectories occur as well.
+The following is a diagram of an approach for ecosystem service assessment, that we have found useful in our engagements (see further details in <a href="docs/Rosenthal_etal_2014_IJBSESM.pdf" target="_blank">Rosenthal et al. 2014</a>). Iteration is critical within each step of the process (orange inset) and between steps (inset again) for the entire process to be effective. We find that revisiting steps 1-3 after <b><a href="javascript:change('top_synthesize.html', 'synthesize.html')">Synthesize</a></b> (step 5) are the most common pathways for iteration; however, other trajectories occur as well.
 <p></p>
 <img src="img/approach_wInset.png" usemap="#wInset"><br>
 <map name="wInset">
-  <area shape="circle" coords="70,86,55" href="scope.html" alt="Scope">
-  <area shape="circle" coords="204,86,55" href="data.html" alt="Data">
-  <area shape="circle" coords="337,86,55" href="scenarios.html" alt="Scenarios">
-  <area shape="circle" coords="470,86,55" href="analyze.html" alt="Analyze">
-  <area shape="circle" coords="603,86,55" href="synthesize.html" alt="Synthesize">
-  <area shape="circle" coords="736,86,55" href="communicate.html" alt="Communicate">
+  <area shape="circle" coords="70,86,55" href="javascript:change('top_scope.html', 'scope.html')">
+  <area shape="circle" coords="204,86,55" href="javascript:change('top_data.html', 'data.html')">
+  <area shape="circle" coords="337,86,55" href="javascript:change('top_scenarios.html', 'scenarios.html')">
+  <area shape="circle" coords="470,86,55" href="javascript:change('top_analyze.html', 'analyze.html')">
+  <area shape="circle" coords="603,86,55" href="javascript:change('top_synthesize.html', 'synthesize.html')">
+  <area shape="circle" coords="736,86,55" href="javascript:change('top_communicate.html', 'communicate.html')">
 </map>
 <a name="tips"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/tips_sm.png" align="left"><h2>&nbsp;&nbsp;Tips</h2>
@@ -171,7 +180,6 @@ The following is a diagram of an approach for ecosystem service assessment, that
 <li>Plan to iterate through the science-policy process to ensure your process is responsive to changing conditions.</li>
 <li>Iterate through the Scenarios &#8596; Analyze &#8596; Synthesize steps to design a "preferred" spatial plan (<a href="docs/Arkema_etal_2015_PNAS.pdf" target="_blank">Arkema et al. 2015</a>)</li>
 </ul>
-<img src="img/ribbon_concierge.png"><br>
 <a name="faq"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/faq_sm.png" align="left"><h2>&nbsp;&nbsp;Frequently Asked Questions (FAQ)</h2>
 <b>Q: How do I know when to move on to the next step?</b><br>
@@ -198,9 +206,9 @@ In our work with the national government of Belize to design an Integrated Coast
 <p></p><br>
 The preferred version of the zoning scheme was reached after several iterations through Steps 1-6.  Results from our models suggest that this final version of the plan will result in 25-100% better returns from services than the initial version of the <i>Informed Management</i> scenario.  The first version was designed to sit between the <i>Conservation</i> and <i>Development</i> scenarios prior to accounting for changes in ecosystem service values.  Modeling services delivered by the first iteration indicated substantial losses for lobster catch and revenue, avoided damages from storms and area of functional habitat relative to current conditions.  
 <p></p>
-To improve the zoning scheme, we used the results from our ecosystem service models (Step 4: <a href="analyze.html"><b>Analyze</b></a>) to identify planning regions where our models predicted that service delivery would decrease relative to the present scenario.   We then used the InVEST habitat risk assessment model (<a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">Arkema et al. 2014</a>) to determine which activities (and where) were causing the greatest risk to habitats that provide important services in that region.  Taking into account the expressed stakeholder priorities for specific activities, we shifted the locations and reduced the extent of these activities (see figure below).
+To improve the zoning scheme, we used the results from our ecosystem service models (Step 4: <a href="javascript:change('top_analyze.html', 'analyze.html')"><b>Analyze</b></a>) to identify planning regions where our models predicted that service delivery would decrease relative to the present scenario.   We then used the InVEST habitat risk assessment model (<a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">Arkema et al. 2014</a>) to determine which activities (and where) were causing the greatest risk to habitats that provide important services in that region.  Taking into account the expressed stakeholder priorities for specific activities, we shifted the locations and reduced the extent of these activities (see figure below).
 <p></p>  
-The second iteration of the Informed Management scenario predicted a dramatic increase in the area of habitats capable of providing services relative to the <i>Current</i>, <i>Development</i>, and "Compromise" scearios, and concomitant increases in the delivery of almost all services in all planning regions.  The area devoted to some activities decreased in extent and shifted locations (e.g., oil exploration, dredging, aquaculture), while the area of others increased (e.g., coastal development).  The second iteration of the <i>Informed Management</i> scenario was reviewed during a 60-day public comment period from May through July 2013.  As a result of several expert reviews, public commentary and changes in national legislation, we incorporated new data sources, local knowledge and local preferences about the distribution of habitats and human activities and produced the final <i>Informed Management</i> scenario (Step 3: <a href="scenario.html"><b>Build Scenarios</b></a>) and expected returns from services (Step 4: <a href="analyze.html"><b>Analyze</b></a>).
+The second iteration of the Informed Management scenario predicted a dramatic increase in the area of habitats capable of providing services relative to the <i>Current</i>, <i>Development</i>, and "Compromise" scearios, and concomitant increases in the delivery of almost all services in all planning regions.  The area devoted to some activities decreased in extent and shifted locations (e.g., oil exploration, dredging, aquaculture), while the area of others increased (e.g., coastal development).  The second iteration of the <i>Informed Management</i> scenario was reviewed during a 60-day public comment period from May through July 2013.  As a result of several expert reviews, public commentary and changes in national legislation, we incorporated new data sources, local knowledge and local preferences about the distribution of habitats and human activities and produced the final <i>Informed Management</i> scenario (Step 3: <a href="javascript:change('top_scenarios.html', 'scenarios.html')"><b>Build Scenarios</b></a>) and expected returns from services (Step 4: <a href="javascript:change('top_analyze.html', 'analyze.html')"><b>Analyze</b></a>).
 <p></p>
 <ul id="folio_scroller">
 <li><span>After the original analysis using the InVEST habitat risk assessment model, stakeholder feedback resulted in modifications to the <i>Informed Management</i> scenario</span>

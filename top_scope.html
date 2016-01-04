@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+	<!-- Google Analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-787904-11', 'auto');
+	  ga('send', 'pageview');
+	  
+	</script>
+	</head>
+	
+	<script>
+		function change(top, bottom)
+		{
+		parent.top_frame.location=top;
+		parent.content.location=bottom;
+		} 		
+	</script>
+
+	
+  <style>
+    html, body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+ 
+    #layer_selector {
+        position: absolute;
+        top: 4px;
+        right: 30px;
+        padding: 0;
+      }
+	  
+	  
+	#primary_nav_wrap
+	{
+		margin-top:0px
+	}
+
+	#primary_nav_wrap ul
+	{
+		list-style:none;
+		position:relative;
+		float:center;
+		margin:0;
+		padding:0
+	}
+
+	#primary_nav_wrap ul a
+	{
+		display:block;
+		color:#333;
+		text-decoration:none;
+		font-weight:700;
+		font-size:12px;
+		line-height:32px;
+		padding:0 15px;
+		font-family:'Arial';
+	}
+
+	#primary_nav_wrap ul li
+	{
+		position:relative;
+		z-index:100;
+		float:left;
+		margin:0;
+		padding:0
+	}
+
+	#primary_nav_wrap ul li.current-menu-item
+	{
+		background:#ddd
+	}
+
+	#primary_nav_wrap ul li:hover
+	{
+		background:#19a9e5
+	}
+
+	#primary_nav_wrap ul ul
+	{
+		display:none;
+		position:absolute;
+		top:100%;
+		left:0;
+		background:#fff;
+		padding:0
+	}
+
+	#primary_nav_wrap ul ul li
+	{
+		float:none;
+		width:200px
+	}
+
+	#primary_nav_wrap ul ul a
+	{
+		line-height:120%;
+		padding:10px 15px
+	}
+
+	#primary_nav_wrap ul ul ul
+	{
+		top:0;
+		left:100%
+	}
+
+	#primary_nav_wrap ul li:hover > ul
+	{
+		display:block
+	}	  
+
+    </style>
+  </head>
+
+  <body>
+
+	<nav id="primary_nav_wrap">
+	<ul>
+	<li class="current-menu-item"><a href="javascript:change('top.html', 'welcome.html')">MP Concierge Home</a></li>
+	<li><a href="javascript:change('top.html', 'feedback.html')">Feedback</a></li>
+	<li><a href="javascript:change('top.html', 'gallery.html')">Gallery</a></li>
+	<li><a href="javascript:change('top.html', 'marine_invest.html')">Marine InVEST</a></li>
+	<li><a href="javascript:change('top.html', 'iterate.html')">Iterate</a></li>
+	<li><a href="javascript:change('top.html', 'contact.html#use-cases')">Use-Cases</a></li>
+	<li><a href="javascript:change('top.html', 'links.html')">Links</a></li>
+	<li><a href="javascript:change('top.html', 'contact.html#acknowledgements')">Credits</a></li>
+	</nav>
+	<br>
+	<p></p>
+<img src="img/ribbon_scope.png" align="left" usemap="#approach">	
+<map name="approach">
+  <area shape="circle" coords="159,30,24" href="javascript:change('top_scope.html', 'scope.html')">
+  <area shape="circle" coords="244,30,24" href="javascript:change('top_data.html', 'data.html')">
+  <area shape="circle" coords="326,30,24" href="javascript:change('top_scenarios.html', 'scenarios.html')">
+  <area shape="circle" coords="408,30,24" href="javascript:change('top_analyze.html', 'analyze.html')">
+  <area shape="circle" coords="488,30,24" href="javascript:change('top_synthesize.html', 'synthesize.html')">
+  <area shape="circle" coords="568,30,24" href="javascript:change('top_communicate.html', 'communicate.html')">
+</map>
+  </body>
+</html>

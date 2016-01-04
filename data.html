@@ -144,29 +144,38 @@ window.onload = function (evt) {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-787904-11', 'auto');
   ga('send', 'pageview');
+
+</script>    
+ 
+<script>
+	function change(top, bottom)
+	{
+	parent.top_frame.location=top;
+	parent.content.location=bottom;
+	} 		
 </script>
+ 
 </head>
 <body>
 <h1>Step 2: Compile Data</h1>
 <img src="img/headers/overview_sm.png" align="left"><h2>&nbsp;&nbsp;Overview</h2>
-Marine planning typically relies on both spatial and non-spatial information characterizing the coastal and marine space. An organized collection of information is useful for all types of participants involved in marine planning.  Data allow you to visualize the locations of current environments and human activities and serve as a foundation for discussions of future plans.  Often, data also serve as inputs to predictive models and <a href="analyze.html#tools">marine planning decision-support tools</a>.  Other times data are used to visually depict or quantify elements of <a href="scenario.html"><b>Scenarios</b></a>.  The uses for the data should be clearly identified before data are collected – often based on the goals established during the <a href="scope.html"><b>Scope</b></a> and <a href="analyze.html"><b>Analyze</b></a> steps.
+Marine planning typically relies on both spatial and non-spatial information characterizing the coastal and marine space. An organized collection of information is useful for all types of participants involved in marine planning.  Data allow you to visualize the locations of current environments and human activities and serve as a foundation for discussions of future plans.  Often, data also serve as inputs to predictive models and <a href="javascript:change('top_analyze.html', 'analyze.html#tools')">marine planning decision-support tools</a>.  Other times data are used to visually depict or quantify elements of <a href="javascript:change('top_scenarios.html', 'scenarios.html')"><b>Scenarios</b></a>.  The uses for the data should be clearly identified before data are collected – often based on the goals established during the <a href="javascript:change('top_scope.html', 'scope.html')"><b>Scope</b></a> and <a href="javascript:change('top_analyze.html', 'analyze.html')"><b>Analyze</b></a> steps.
 Generally, useful data include biophysical and oceanographic information such as elevation and bathymetry, maps of human activities such as transportation routes or fishing grounds, the distribution of coastal and marine habitats, and socioeconomic data like those provided by official censuses.  When monetary valuation is a part of the assessment, additional data on market prices or property values may also be pertinent.
 
-<p></p>
 <img src="img/approach_Step2.png" usemap="#step2"><br>
 <map name="step2">
-  <area shape="circle" coords="75,92,55" href="scope.html" alt="Scope">
-  <area shape="circle" coords="365,92,55" href="scenarios.html" alt="Scenarios">
-  <area shape="circle" coords="487,92,55" href="analyze.html" alt="Analyze">
-  <area shape="circle" coords="632,92,55" href="synthesize.html" alt="Synthesize">
-  <area shape="circle" coords="763,92,55" href="communicate.html" alt="Communicate">
+  <area shape="circle" coords="75,92,55" href="javascript:change('top_scope.html', 'scope.html')">
+  <area shape="circle" coords="365,92,55" href="javascript:change('top_scenarios.html', 'scenarios.html')">
+  <area shape="circle" coords="487,92,55" href="javascript:change('top_analyze.html', 'analyze.html')">
+  <area shape="circle" coords="632,92,55" href="javascript:change('top_synthesize.html', 'synthesize.html')">
+  <area shape="circle" coords="763,92,55" href="javascript:change('top_communicate.html', 'communicate.html')">
 </map>
 <a name="tips"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/tips_sm.png" align="left"><h2>&nbsp;&nbsp;Tips</h2>
 <ul>
 <li>Don’t spend too much time initially on this step. The <b>Compile Data</b> step can be a rabbit hole because you can collect and amass new data for forever.  Only collect the data you need to reach your management and planning objectives. </li>
 <li>Use global or regional data sources to get a 'lay of the land' and identify data gaps/needs</li>
-<li>Show preliminary data to stakeholders; use expert feedback to refine information (see <a href="iterate.html"><b>Iterate</b></a> step)</li>
+<li>Show preliminary data to stakeholders; use expert feedback to refine information (see <a href="javascript:change('top.html', 'iterate.html')"><b>Iterate</b></a> step)</li>
 <li>If funding allows, consider adding a dedicated GIS/data analyst to your team</li>
 </ul>
 <p></p>
@@ -222,7 +231,7 @@ Click on the links or hover over the map markers to learn more about these regio
 <a name="tools"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/tools_sm.png" align="left"><h2>&nbsp;&nbsp;InVEST Helper Tools</h2>
 <img src="img/on_ramp.png"><br>
-Spatial and tabular data typically require some amount of processing before they can be plugged into <a href="marine_invest.html">Marine InVEST</a> or other <a href="analyze.html#tools">marine planning decision-support tools</a>. Data processing is a challenging but necessary step. NatCap has created a <a href="http://msp.naturalcapitalproject.org/download/" target="_blank">Marine Planning Toolset</a> and documentation to assist InVEST users with preparing and formatting data inputs for analyzing ecosystem service outcomes: 
+Spatial and tabular data typically require some amount of processing before they can be plugged into <a href="javascript:change('top.html', 'marine_invest.html')">Marine InVEST</a> or other <a href="javascript:change('top_analyze.html', 'analyze.html#tools')">marine planning decision-support tools</a>. Data processing is a challenging but necessary step. NatCap has created a <a href="http://msp.naturalcapitalproject.org/download/" target="_blank">Marine Planning Toolset</a> and documentation to assist InVEST users with preparing and formatting data inputs for analyzing ecosystem service outcomes: 
 <ol>
 <li><a href="http://naturalcapitalproject.org/pubs/InVEST_DataRequirements_June2014.xlsx" target="_blank">InVEST 3.x Data Requirements</a> - A spreadsheet listing the required and optional inputs for each InVEST model</li>
 <li><a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/" target="_blank">InVEST 3.x User's Guide</a> - Each chapter includes a "Data Needs" section that outlines input and formatting requirements for InVEST models</li>

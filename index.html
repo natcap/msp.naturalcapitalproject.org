@@ -12,14 +12,10 @@
   ga('send', 'pageview');
 </script>
 </head>
-
-<frameset cols="150,*" frameborder="0" border="0" framespacing="0">
-	<frame name="menu" src="frame.html" marginheight="0" marginwidth="0" scrolling="auto" noresize>
-	<frame name="content" src="welcome.html" marginheight="0" marginwidth="0" scrolling="auto" noresize>
-<noframes>
-</noframes>
+<frameset rows="110,*" frameborder="0">
+  <frame src="top.html" name="top_frame" scrolling="no">
+  <frameset cols="*" frameborder="0">
+   <frame src="welcome.html" name="content"  marginheight="0" marginwidth="0" scrolling="auto" noresize>
+  </frameset>
 </frameset>
-
 </html>
-
-

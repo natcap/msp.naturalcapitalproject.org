@@ -143,7 +143,16 @@ window.onload = function (evt) {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-787904-11', 'auto');
   ga('send', 'pageview');
+</script>    
+  
+<script>
+	function change(top, bottom)
+	{
+	parent.top_frame.location=top;
+	parent.content.location=bottom;
+	} 		
 </script>
+    
 </head>
 <body>
 <h1>Step 6: Reach Out</h1>
@@ -152,11 +161,11 @@ By this step in the process, the team has done significant work together and it 
 <p></p>
 <img src="img/approach_Step6.png" usemap="#step6"><br>
 <map name="step6">
-  <area shape="circle" coords="70,86,55" href="scope.html" alt="Scope">
-  <area shape="circle" coords="205,86,55" href="data.html" alt="Data">
-  <area shape="circle" coords="338,86,55" href="scenarios.html" alt="Scenarios">
-  <area shape="circle" coords="469,86,55" href="analyze.html" alt="Analyze">
-  <area shape="circle" coords="603,86,55" href="synthesize.html" alt="Synthesize">
+  <area shape="circle" coords="70,86,55" href="javascript:change('top_scope.html', 'scope.html')">
+  <area shape="circle" coords="205,86,55" href="javascript:change('top_data.html', 'data.html')">
+  <area shape="circle" coords="338,86,55" href="javascript:change('top_scenarios.html', 'scenarios.html')">
+  <area shape="circle" coords="469,86,55" href="javascript:change('top_analyze.html', 'analyze.html')">
+  <area shape="circle" coords="603,86,55" href="javascript:change('top_synthesize.html', 'synthesize.html')">
 </map>
 The following synthesis products and strategies can get you closer to some communication goals:
 <ul>
@@ -173,11 +182,11 @@ The following synthesis products and strategies can get you closer to some commu
 <li>A central challenge here is that we are working to make implicit connections explicit. Don't leave people with the message that "it is complicated". Rather, leave them with the message that "we can make better decisions if we think this through differently".</li>
 <li>Be honest about the science and underlying uncertainty (<a href="docs/" target="_blank">Refsgaard 2006</a>, <a href="http://www.tandfonline.com/doi/abs/10.1076/iaij.4.1.5.16466" target="_blank">Walker et al. 2003</a>)</li>
 <li>Consider building an online repository (e.g., mapping portal and download) to archive and dissementate spatial data</li>
-<li>Organizing a workshop to share results can be a good mechanism for feedback, drive the future evolution of the work (see <a href="iterate.html"><b>Iterate</b></a> step), and increase buy-in</li>
+<li>Organizing a workshop to share results can be a good mechanism for feedback, drive the future evolution of the work (see <a href="javascript:change('top.html', 'iterate.html')"><b>Iterate</b></a> step), and increase buy-in</li>
 </ul>
 <a name="gallery"></a><div class="hr dotted clearfix">&nbsp;</div>
-<img src="img/headers/gallery_sm.png" align="left"><h2>&nbsp;&nbsp;Gallery</h2>
-Visit our <a href="gallery.html"><b>Visualization Gallery</b></a> to explore examples of different design techniques NatCap has used to translate science information into clear and effective visuals.  Many of these visuals have been used to informing marine planning processes  around the world.
+<img src="img/headers/gallery_sm.png" align="left"><h2>&nbsp;&nbsp; Visualization Gallery</h2>
+Visit our <a href="javascript:change('top.html', 'gallery.html')"><b>Gallery</b></a> to explore examples of different design techniques NatCap has used to translate science information into clear and effective visuals.  Many of these visuals have been used to informing marine planning processes  around the world.
 <p></p>
 <a name="faq"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/faq_sm.png" align="left"><h2>&nbsp;&nbsp;Frequently Asked Questions (FAQ)</h2>
