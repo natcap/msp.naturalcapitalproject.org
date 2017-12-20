@@ -18,44 +18,210 @@
 			});
 		});
 	</script>
+
+<script type="text/javascript">
+var collapseDivs, collapseLinks;
+
+function createDocumentStructure (tagName) {
+  if (document.getElementsByTagName) {
+    var elements = document.getElementsByTagName(tagName);
+    collapseDivs = new Array(elements.length);
+    collapseLinks = new Array(elements.length);
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      var siblingContainer;
+      if (document.createElement && 
+          (siblingContainer = document.createElement('div')) &&
+          siblingContainer.style) 
+      {
+        var nextSibling = element.nextSibling;
+        element.parentNode.insertBefore(siblingContainer, nextSibling);
+        var nextElement = elements[i + 1];
+        while (nextSibling != nextElement && nextSibling != null) {
+          var toMove = nextSibling;
+          nextSibling = nextSibling.nextSibling;
+          siblingContainer.appendChild(toMove);
+        }
+        siblingContainer.style.display = 'none';
+        
+        collapseDivs[i] = siblingContainer;
+        
+        createCollapseLink(element, siblingContainer, i);
+      }
+      else {
+        // no dynamic creation of elements possible
+        return;
+      }
+    }
+    createCollapseExpandAll(elements[0]);
+  }
+}
+
+function createCollapseLink (element, siblingContainer, index) {
+  var span;
+  if (document.createElement && (span = document.createElement('span'))) {
+    span.appendChild(document.createTextNode(String.fromCharCode(160)));
+    var link = document.createElement('a');
+    link.collapseDiv = siblingContainer;
+    link.href = '#';
+    link.appendChild(document.createTextNode('[+]'));
+    link.onclick = collapseExpandLink;
+    collapseLinks[index] = link;
+    span.appendChild(link);
+    element.appendChild(span);
+  }
+}
+
+function collapseExpandLink (evt) {
+  if (this.collapseDiv.style.display == '') {
+    this.parentNode.parentNode.nextSibling.style.display = 'none';
+    this.firstChild.nodeValue = '[+]';
+  }
+  else {
+    this.parentNode.parentNode.nextSibling.style.display = '';
+    this.firstChild.nodeValue = '[-]';
+  }
+
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function createCollapseExpandAll (firstElement) {
+  var div;
+  if (document.createElement && (div = document.createElement('div'))) {
+    var link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = expandAll;
+    div.appendChild(link);
+    div.appendChild(document.createTextNode(' '));
+    link = document.createElement('a');
+    link.href = '#';
+    link.appendChild(document.createTextNode(''));
+    link.onclick = collapseAll;
+    div.appendChild(link);
+    firstElement.parentNode.insertBefore(div, firstElement);
+  }
+}
+
+function expandAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = '';
+    collapseLinks[i].firstChild.nodeValue = '[-]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+
+function collapseAll (evt) {
+  for (var i = 0; i < collapseDivs.length; i++) {
+    collapseDivs[i].style.display = 'none';
+    collapseLinks[i].firstChild.nodeValue = '[+]';
+  }
+  
+  if (evt && evt.preventDefault) {
+    evt.preventDefault();
+  }
+  return false;
+}
+</script>
+<script type="text/javascript">
+window.onload = function (evt) {
+  createDocumentStructure('h4');
+}
+</script>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-787904-11', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script>
+	function change(top, bottom)
+	{
+	parent.top_frame.location=top;
+	parent.content.location=bottom;
+	} 		
+</script>
+
 </head>
 <body>
 <h1>Iterate</h1>
 <img src="img/headers/overview_sm.png" align="left"><h2>&nbsp;&nbsp;Overview</h2>
-Iteration can occur within each step, and over the entire process.  For example, <b><a href="scope.html">Scoping</a></b> (step 1) involves defining problem definition and identification of key partnerships and stakeholders, who often bring to the table additional insights, issues, and capacities that can be integrated throughout.  The <b><a href="data.html">Data</a></b> and <b><a href="analyze.html">Analyze</a></b> steps often involve iteration through which results from intial, coarse analyses illustrate critical gaps.  At times, communication of results to new audiences will help identify new decision questions that require new data collection, scenarios, analysis, or synthesis.
+Iteration is key to using ecosystem services approaches in marine spatial planning.   By <b>iteration</b> we mean <b>repeatedly revisiting one step or many steps in the science-policy process to improve results over time</b>.  Engaging stakeholders and local experts will allow you to share preliminary outputs to get feedback, enhance the transparency of your process, create buy-in, and build capacity to use ecosystem service approaches in MSP.  Iteration is extremely important for making progress in a complicated process like marine spatial planning.  It allows you and your partners to move forward and better understand what science and information is really needed to inform decision-making, rather than get stuck trying to perfect the results from a particular step.
 <p></p>
-The following is a diagram of the approach for ecosystem service assessment proposed by Rosenthal and colleagues (2014).  Iteration is critical within each step of the process (orange inset) and between steps (inset again) for the entire process to be effective.  We find that revisiting steps 1-3 after <b><a href="synthesize.html">Synthesize</a></b> (step 5) are the most common pathways for iteration; however, other trajectories do occur.
+Iteration can occur within each step, and over the entire process.  For example, <b><a href="javascript:change('top_scope.html', 'scope.html')">Scoping</a></b> (step 1) involves defining a problem and identifying key partnerships and stakeholders.  These partners and stakeholders will bring additional insights, issues, and capacities to the process, which can in turn influence ecosystem service priorities, scenarios and synthesis. Also, the <b><a href="javascript:change('top_data.html', 'data.html')">Compile Data</a></b> and <b><a href="javascript:change('top_analyze.html', 'analyze.html')">Analyze</a></b> steps often benefit from iteration.  Starting your analysis with readily available data, even if it is coarse, can help identify critical data gaps and encourage local institutions and stakeholders to participate in the process and contribute better information. Communicating results to new audiences will help identify new questions that require further data collection, scenario development, analysis, or synthesis.  Finally, through iteration you can use the outputs from your ecosystem service analysis to inform changes you want to make to improve your spatial plan (i.e., revise the <a href="javascript:change('top_scenarios.html', 'scenarios.html')"><b>Build Scenarios</b></a> step).  This is an approach we used in our work in Belize and explain below in the use-case section.
+<p></p>
+The following is a diagram of an approach for ecosystem service assessment, that we have found useful in our engagements (see further details in <a href="docs/Rosenthal_etal_2014_IJBSESM.pdf" target="_blank">Rosenthal et al. 2014</a>). Iteration is critical within each step of the process (orange inset) and between steps (inset again) for the entire process to be effective. We find that revisiting steps 1-3 after <b><a href="javascript:change('top_synthesize.html', 'synthesize.html')">Synthesize</a></b> (step 5) are the most common pathways for iteration; however, other trajectories occur as well.
 <p></p>
 <img src="img/approach_wInset.png" usemap="#wInset"><br>
 <map name="wInset">
-  <area shape="circle" coords="70,86,55" href="scope.html" alt="Scope">
-  <area shape="circle" coords="204,86,55" href="data.html" alt="Data">
-  <area shape="circle" coords="337,86,55" href="scenarios.html" alt="Scenarios">
-  <area shape="circle" coords="470,86,55" href="analyze.html" alt="Analyze">
-  <area shape="circle" coords="603,86,55" href="synthesize.html" alt="Synthesize">
-  <area shape="circle" coords="736,86,55" href="communicate.html" alt="Communicate">
+  <area shape="circle" coords="70,86,55" href="javascript:change('top_scope.html', 'scope.html')">
+  <area shape="circle" coords="204,86,55" href="javascript:change('top_data.html', 'data.html')">
+  <area shape="circle" coords="337,86,55" href="javascript:change('top_scenarios.html', 'scenarios.html')">
+  <area shape="circle" coords="470,86,55" href="javascript:change('top_analyze.html', 'analyze.html')">
+  <area shape="circle" coords="603,86,55" href="javascript:change('top_synthesize.html', 'synthesize.html')">
+  <area shape="circle" coords="736,86,55" href="javascript:change('top_communicate.html', 'communicate.html')">
 </map>
-<a name="goals"></a><div class="hr dotted clearfix">&nbsp;</div>
-<img src="img/headers/products_sm.png" align="left"><h2>&nbsp;&nbsp;Goals</h2>
-<ul>
-<li>Engage stakeholders and local experts to share preliminary results and exchange knowledge</li>
-<li>Use stakeholder and expert feedback to revisit steps in the approach and refine project information</li>
-</ul>
 <a name="tips"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/tips_sm.png" align="left"><h2>&nbsp;&nbsp;Tips</h2>
 <ul>
-<li>Through an iterative process, refine project information and then apply this knowledge within each step of the approach</li>
-<li>Use iteration early on to identify additional data needs, produce initial results to show to local contacts, and get more comfortable with the mechanics of applying scenario development and ecosystem service analysis tools</li>
+<li>Use iteration early on to identify additional data needs, produce initial results to show to local contacts, and get more comfortable with the mechanics of applying scenario development and ecosystem service analysis tools (see pages 5-7 "How were scenarios developed?" in <a href="http://www.naturalcapitalproject.org/pubs/Belize_InVEST_scenarios_case_study.pdf" target="_blank">Rosenthal et al. 2013</a>)</li>
+<li>Expect to iterate through your planning process and use this expectation as a way of moving forward, rather than getting stuck trying to perfect the outputs from each step</li>
+<li>Plan to iterate through the science-policy process to ensure your process is responsive to changing conditions.</li>
+<li>Iterate through the Scenarios &#8596; Analyze &#8596; Synthesize steps to design a "preferred" spatial plan (<a href="docs/Arkema_etal_2015_PNAS.pdf" target="_blank">Arkema et al. 2015</a>)</li>
 </ul>
 <a name="faq"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/faq_sm.png" align="left"><h2>&nbsp;&nbsp;Frequently Asked Questions (FAQ)</h2>
 <b>Q: How do I know when to move on to the next step?</b><br>
 <i>A: Navigating through the different steps of this approach takes practice.  With that said, returning to previous steps with new information is rarely a waste of time.  At the very least, it will solidify your goals for each step and help your team move forward.</i><br>
 <p></p>
-<b>Q: How many iterations (times through the 6 steps) are typical for an MSP project?</b><br>
-<i>A: The number of iterations for a project depends on your timeline and other factors (funding, capacity, etc.).  Some of our use-cases (e.g., Barbados) were conducted under tight project windows that only allowed for a few iterations.  For other projects, like Belize and Vancouver Island, we had several years to work through this approach, learn from our mistakes, and revisit previous steps with better information and experience.</i>
+<b>Q: How many iterations are typical within an MSP project?</b><br>
+<i>A: The number of iterations for a project depends on your timeline and other factors (funding, capacity, etc.). Some of our use-cases (e.g., Barbados) were conducted under tight project windows that only allowed for a few iterations. For other projects, like Belize and Vancouver Island, we had several years to work through this approach, learn from our mistakes, and revisit previous steps with better information and experience.  It is also worth noting, that you can save some iteration by looking forward to the next step and anticipating needs.  For example, if you think ahead about what analytical approaches you plan on using, that can inform the data step and may prevent you from having to go back to the data step to collect additional data for your analysis.</i>
 <p></p>
-<a class="float right" href="#">top</a>
+<a name="use-cases"></a><div class="hr dotted clearfix">&nbsp;</div><a class="float right" href="#">top</a>
+<img src="img/headers/use-cases_sm.png" align="left"><h2>&nbsp;&nbsp;Use-Cases</h2>
+<h4>Belize</h4>
+In our work with the national government of Belize to design an Integrated Coastal Zone Management (ICZM) plan, the iterative process involved policymakers, stakeholders and scientists.  We developed scenarios to investigate the consequences of alternative planning policies and inform the Belize ICZM Plan. The composition of these scenarios changed over time to reflect improved data sources, local knowledge, and insights gained from InVEST model outputs. The process resulted in three contrasting future scenarios for the year 2025 (see figure below).
+<p></p>
+<li><i><b>Conservation</b></i> prioritizes a vision of long-term environmental health through conservation of existing ecosystems.
+</li><p></p>
+<li><i><b>Development</b></i> presents a vision of rapid economic growth based on natural resource utilization and urban expansion. It prioritizes immediate development needs and the interests of coastal developers and extractive industries over the proactive preservation of ecosystem services. As the process progressed, this scenario came to represent possible construction and development that could occur without zoning guidelines.</li><p></p>
+<li><i><b>Informed Management</b></i> represents a policy that supports sustainable development of coastal resources to ensure future economic benefit for Belizeans. <i>Informed Management</i> blends environmental conservation goals with current needs for coastal development and marine uses that relate to Belize's top industries. This scenario was originally called "middle-of-the-road," and then "compromise" scenario, to reflect a compromise between conflicting viewpoints of environmental preservationists and economic development interests. Eventually, it was developed into a science-based zoning scheme for enhancing ecosystem services and reducing risk to habitats that provide those services.  Importantly, this scenario integrated the views of a broad range of stakeholders and was refined using ecosystem service information from InVEST. It became the preferred zoning scheme recommended by the Coastal Zone Management Authority and Institute in the coastal zone management plan.</li>
+<p></p><br>
+<ul id="folio_scroller">
+<li><span>Alternative future scenarios used to design the Belize ICZM Plan</span>
+<img alt="" src="img/iterate_bz_folio_1.png" /></a>
+</li>
+</ul>
+<p></p><br>
+The preferred version of the zoning scheme was reached after several iterations through Steps 1-6.  Results from our models suggest that this final version of the plan will result in 25-100% better returns from services than the initial version of the <i>Informed Management</i> scenario.  The first version was designed to sit between the <i>Conservation</i> and <i>Development</i> scenarios prior to accounting for changes in ecosystem service values.  Modeling services delivered by the first iteration indicated substantial losses for lobster catch and revenue, avoided damages from storms and area of functional habitat relative to current conditions.  
+<p></p>
+To improve the zoning scheme, we used the results from our ecosystem service models (Step 4: <a href="javascript:change('top_analyze.html', 'analyze.html')"><b>Analyze</b></a>) to identify planning regions where our models predicted that service delivery would decrease relative to the present scenario.   We then used the InVEST habitat risk assessment model (<a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">Arkema et al. 2014</a>) to determine which activities (and where) were causing the greatest risk to habitats that provide important services in that region.  Taking into account the expressed stakeholder priorities for specific activities, we shifted the locations and reduced the extent of these activities (see figure below).
+<p></p>  
+The second iteration of the Informed Management scenario predicted a dramatic increase in the area of habitats capable of providing services relative to the <i>Current</i>, <i>Development</i>, and "Compromise" scearios, and concomitant increases in the delivery of almost all services in all planning regions.  The area devoted to some activities decreased in extent and shifted locations (e.g., oil exploration, dredging, aquaculture), while the area of others increased (e.g., coastal development).  The second iteration of the <i>Informed Management</i> scenario was reviewed during a 60-day public comment period from May through July 2013.  As a result of several expert reviews, public commentary and changes in national legislation, we incorporated new data sources, local knowledge and local preferences about the distribution of habitats and human activities and produced the final <i>Informed Management</i> scenario (Step 3: <a href="javascript:change('top_scenarios.html', 'scenarios.html')"><b>Build Scenarios</b></a>) and expected returns from services (Step 4: <a href="javascript:change('top_analyze.html', 'analyze.html')"><b>Analyze</b></a>).
+<p></p>
+<ul id="folio_scroller">
+<li><span>After the original analysis using the InVEST habitat risk assessment model, stakeholder feedback resulted in modifications to the <i>Informed Management</i> scenario</span>
+<img alt="" src="img/iterate_bz_folio_2.png"></li>
+</ul>
+<p></p><br>
+<h4>The Bahamas</h4>
+As part of NatCap and TNC's spatial development planning for Andros Island, we co-developed scenarios and then analyzed how future distribution of human activities would affect habitats and the benefits they provide to people.  We visited Andros for three rounds of stakeholder consultations over one year. Sharing narratives and scenario maps helped garnering feedback on the type and location of future activities.  We used feedback from community members, along with outputs from the InVEST models, to revise the preferred scenario. After multiple iterations, model results indicated that a stakeholder-preferred scenario ("Sustainable Prosperity") maintained (or sometimes enhanced) important benefits from nature (e.g., fisheries, coastal protection, recreation and tourism).
+<p></p>
+<ul id="folio_scroller">
+<li><span>Katie Arkema explaining stakeholder visions of future scenarios for the Andros Island master plan to 12th graders from North Andros High School in The Bahamas</span>
+<img alt="" src="img/iterate_bh_folio_1.png"></li>
+</ul>
 <p></p><br>
 </body>
 </html>

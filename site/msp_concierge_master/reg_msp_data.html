@@ -9,6 +9,15 @@
   body { margin:0; padding:0; }
   #map { position:absolute; top:0; bottom:0; width:100%; }
 </style>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-787904-11', 'auto');
+  ga('send', 'pageview');
+</script>
 </head>
 <body>
 <div id='map'></div>
@@ -166,6 +175,84 @@ var geojson = {
         geometry: {
             type: 'Point',
             coordinates: [-98, 38.5]
+        }
+    },	
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Coastal Hazards Database for Latin America and the Caribbean (C3A)',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://www.c3a.ihcantabria.com/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-65, -16.8]
+        }
+    },	
+	{
+        type: 'Feature',
+        properties: {
+            title: 'US Census Bureau',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://www.census.gov/data/data-tools.html'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-77.0164, 38.9047]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'UK Office for National Statistics',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://www.ons.gov.uk/ons/guide-method/geography/products/census/index.html'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-5, 55]
+        }
+    },
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Darwin Plus Project: British Virgin Islands MPA and hydrographic survey capacity building',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://tinyurl.com/DPLUS026'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-64.828754, 18.330853]
+        }
+    },		
+	{
+        type: 'Feature',
+        properties: {
+            title: 'Gulf of Mexico Data Atlas',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'http://gulfatlas.noaa.gov/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-90, 25]
+        }
+    },	
+	{
+        type: 'Feature',
+        properties: {
+            title: 'NOAA National Centers for Environmental Information (NCEI)',
+            'marker-color': '#19a9e5',
+            'marker-size': 'small',
+            url: 'https://ncei.noaa.gov/'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-105.2519, 40.02]
         }
     },	
 ]

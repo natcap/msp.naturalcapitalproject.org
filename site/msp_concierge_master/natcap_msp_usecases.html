@@ -1,118 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8 />
+<meta http-equiv='Content-Type'>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
 <style>
   body { margin:0; padding:0; }
   #map { position:absolute; top:0; bottom:0; width:100%; }
+  
 </style>
+
 </head>
-<body>
+<body>	
 <div id='map'></div>
 <script>
-L.mapbox.accessToken = 'pk.eyJ1IjoiZ2VvaW50ZXJlc3QiLCJhIjoiQ2czbnlDMCJ9.pQ-_LxzHCL6WqMm5rJrEWw';
-var map = L.mapbox.map('map', 'mapbox.world-light')
-  .setView([15, -40], 2);
-  
+
+// define basemaps
+var imagery = L.tileLayer('http://a.tiles.mapbox.com/v3/geointerest.map-dqz2pa8r/{z}/{x}/{y}.png', {id: 'MapID'});
+var mapboxTerrain = L.tileLayer('http://a.tiles.mapbox.com/v3/geointerest.e4qjes5f/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ2VvaW50ZXJlc3QiLCJhIjoiQ2czbnlDMCJ9.pQ-_LxzHCL6WqMm5rJrEWw', 
+	{attribution: '&copy; <a href="http://mapbox.com/">MapBox</a>'}
+	);
+var cartoLight = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+	  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+	});
+
+
+// set base map and controls
+var map = new L.Map('map', {
+  zoomControl: true,
+  layer_selector: true,
+  layers: [mapboxTerrain],
+  center: [20, -43],
+  zoom: 2,
+  minZoom: 2,
+  maxZoom: 10
+});
+
+
+// scale and scroll
+L.control.scale({ position: 'bottomleft' }).addTo(map);
 map.scrollWheelZoom.disable();
 
-var myLayer = L.mapbox.featureLayer().addTo(map);
 
-
-// The GeoJSON representing the two point features
-var geojson = {
-    type: 'FeatureCollection',
-    features: [
-	{
-        type: 'Feature',
-        properties: {
-            title: 'West Coast Vancouver Island',
-            'marker-color': '#19a9e5',
-            'marker-size': 'small',
-            url: 'http://www.naturalcapitalproject.org/where/wcvi.html'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [-125.8, 49.0]
-        }
-    },
-	{
-        type: 'Feature',
-        properties: {
-            title: 'Mozambique',
-            'marker-color': '#19a9e5',
-            'marker-size': 'small',
-            url: 'http://www.naturalcapitalproject.org/where/mozambique.html'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [33.3, -25.7]
-        }
-    },
-	{
-        type: 'Feature',
-        properties: {
-            title: 'Belize',
-            'marker-color': '#19a9e5',
-            'marker-size': 'small',
-            url: 'http://www.naturalcapitalproject.org/where/belize.html'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [-88.1, 17.3]
-        }
-    },
-	{
-        type: 'Feature',
-        properties: {
-            title: 'Barbados',
-            'marker-color': '#19a9e5',
-            'marker-size': 'small',
-            url: 'http://www.geointerest.frih.org/msp/docs/UseCase_Barbados_ProjectSummary.pdf'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [-59.5, 13.1]
-        }
-    },
-	{
-        type: 'Feature',
-        properties: {
-            title: 'New England',
-            'marker-color': '#19a9e5',
-            'marker-size': 'small',
-            url: 'http://www.naturalcapitalproject.org/where/newengland.html'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [-70.2, 42.9]
-        }
-    },
-	{
-        type: 'Feature',
-        properties: {
-            title: 'California',
-            'marker-color': '#19a9e5',
-            'marker-size': 'small',
-            url: 'http://www.naturalcapitalproject.org/where/california.html'
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [-122.7, 36.9]
-        }
-    },	
-]
+// add basemap and overlays
+var baseMaps = {
+	"light": cartoLight,	
+	"terrain": mapboxTerrain
 };
 
-// Pass features and a custom factory function to the map
-myLayer.setGeoJSON(geojson);
-myLayer.on('click', function(e) {
-    e.layer.unbindPopup();
-    window.open(e.layer.feature.properties.url);
-});
+
+L.control.layers(baseMaps, blueIcon, {collapsed: false}).addTo(map);	
+	
+
+// extend the default marker class
+ var blueIcon = L.Icon.Default.extend({
+	options: {
+			iconUrl: 'img/marker-icon-blue.png' ,
+			iconSize:     [12.75, 21], // size of the icon
+			shadowSize:   [24.75, 31.5], // size of the shadow
+	}
+ });
+ var blueLiteIcon = L.Icon.Default.extend({
+	options: {
+			iconUrl: 'img/marker-icon-blueLite.png' ,
+			iconSize:     [12.75, 21], // size of the icon
+			shadowSize:   [33, 31.5], // size of the shadow
+	}
+ });
+
+   
+ var blueIcon = new blueIcon();
+ var blueLiteIcon = new blueLiteIcon();   
+  
+     
+L.marker([49.0, -125.8], {icon: blueLiteIcon}).addTo(map).bindPopup("<h1>Spatial Planning on Vancouver Island</h1>Working with West Coast Aquatic, a public-private partnership, to use nature's benefits to inform coastal plans for Barkley and Clayoquot Sounds.");
+L.marker([13.193887, -59.54319799999996 ], {icon: blueLiteIcon}).addTo(map).bindPopup("<h1>Spatial Planning in Barbados</h1>Working with the Inter-American Development Bank, the consulting firm Downstream Strategies, and the Barbados Coastal Zone Management Unit to incorporate ecosystem services into coastal zone planning in Barbados.");
+L.marker([24.7063805, -78.0195387 ], {icon: blueIcon}).addTo(map).bindPopup("<h1>Spatial Planning in Andros Island, The Bahamas</h1>Working with the Government of The Bahamas, The Nature Conservancy, and the Inter-American Development Bank to develop a Master Plan for Andros Island that will promote sustainable development and ensure the long-term viability of forests, wetlands, reefs, and biodiversity that underpin the economy and support livelihoods.");
+L.marker([-18.665695, 35.52956199999994 ], {icon: blueIcon}).addTo(map).bindPopup("<h1>Spatial Planning in Mozambique</h1>Together with WWF, the government of Mozambique and other partners, helping to create a spatial plan for the Primeras et Segundas marine reserve, as well as to integrate natural capital in its national planning system and national accounts, highlighted as one of its strategic objectives in the country’s five year national development plan.");
+L.marker([17.189877, -88.49765000000002], {icon: blueLiteIcon}).addTo(map).bindPopup("<h1>Spatial Planning in Belize</h1>Working with the Belize Coastal Zone Management Authority and Institute, WWF and other partners to use ecosystem services to design the country’s first national integrated coastal zone management plan.");
+L.marker([41.5264977, -70.6730857], {icon: blueIcon}).addTo(map).bindPopup("<h1>Spatial Planning and Climate Adaptation and Hazard Mitigation in Woods Hole, MA</h1>Working with state, regional and Federal leaders in New England to (i) map and quantify risks to habitat and ecosystem services from various activities in the Northwest Atlantic; (ii) proactively incorporate visibility considerations into wind farms and other large infrastructure siting and development projects, and (iii) quantify the specific communities (people and ports) affected by changes in fishing patterns driven by climate and management.");
+L.marker([36.6002378, -121.89467609999997], {icon: blueIcon}).addTo(map).bindPopup("<h1>Climate Adaptation and Hazard Mitigation along the California central coast</h1>Working with the Center for Ocean Solutions to include natural capital in climate adaptation planning in Monterey, Santa Cruz, Sonoma, and Marin Counties.");
 </script>
 </body>
 </html>

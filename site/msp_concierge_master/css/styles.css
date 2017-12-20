@@ -1,6 +1,6 @@
 /* Global Styles */
 
-	body								{background:url(../images/bg.png) repeat-x #FFFFFF; font-size:10.5px;	font-family:verdana,arial,sans-serif;; color:#000000;}
+	body								{background:url(../images/bg.png) repeat-x #FFFFFF; font-size:10.5px;	font-family:arial,sans-serif;; color:#000000;}
 	a:focus								{outline:1px dotted;}
 	a									{color:#717171; text-decoration:none;}
 	a:hover								{text-decoration:none;}

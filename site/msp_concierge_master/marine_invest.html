@@ -135,113 +135,137 @@ window.onload = function (evt) {
   createDocumentStructure('h4');
 }
 </script>
-	
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-787904-11', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script>
+	function change(top, bottom)
+	{
+	parent.top_frame.location=top;
+	parent.content.location=bottom;
+	} 		
+</script>
+
 </head>
 <body>
-<h1>InVEST</h1>
 <img src="img/headers/overview_sm.png" align="left"><h2>&nbsp;&nbsp;Overview</h2>
 <img src="img/logo_InVEST.jpg" align="left">InVEST is a suite of software models used to <b>map and value the goods and services from nature that sustain and fulfill human life</b>.  The toolkit can aid decision makers to assess quantified tradeoffs associated with alternative management choices and to identify areas where investment in natural capital can enhance human development and conservation.
 <p></p>
 Some of the models within InVEST can be applied for coastal-marine ecosystem assessment, planning and management.
-<b><a href="http://www.naturalcapitalproject.org/invest" target="_blank">Click here</a></b> to download the latest version of InVEST.
-<p></p>
+<b><a href="http://www.naturalcapitalproject.org/invest" target="_blank">Click here</a> to download the latest version of InVEST.</b>.
+<p></p><br><br>
+<ul id="folio_scroller">
+<li><span>Diagram showing potential linkages across InVEST models.  We consider a linkage to be when outputs of one model are used as inputs to another.</span><a href="img/invest_linkages.png" target="_blank"><img alt="" src="img/invest_linkages.png" /></a></li>
+<li><span>Risk posed to habitats by human uses, climate change and other stressors can alter ecosystem structure and function. The InVEST Habitat Risk Assessment uses literature review and expert elicitation to map and measure direct effects to habitats and changes in the distribution of ecosystem services.</span><img alt="" src="img/marine_invest_folio_3.png" /></li>
+<li><span>InVEST Marine Water Quality and Habitat Risk Assessment are supporting service models that enable users to map, measure and value final ecosystem services (e.g., coastal protection, fisheries production, tourism and recreation).</span><a href="img/invest_linkages.png" target="_blank"><img alt="" src="img/invest_linkages.png" /></a></li>
+<li><span>Human activities in the coastal zone such as recreation/tourism and fisheries underpin the economies of many coastal communities but also pose risk to habitats that offer important benefits to people.</span><img alt="" src="img/marine_invest_folio_2.png" /></li>
+</ul> 
+<p></p><br><br>
 <div class="hr dotted clearfix">&nbsp;</div>
-<img src="img/headers/tools_sm.png" align="left"><h2>&nbsp;&nbsp;Marine InVEST for MSP</h2>
-Use the expand [+] button to learn more about InVEST models and tools that can be applied for MSP.
+<img src="img/headers/tools_sm.png" align="left"><h2>&nbsp;&nbsp;Marine InVEST</h2>
+Use the expand [+] button to learn more about InVEST models and tools for coastal and marine spatial planning.<br>Names of tools in <i>italics</i> indicate supporting service models or tools to facilitate ecosystem service analyses.    
 <p></p>
-<h4>&#8226; Coastal Blue Carbon</h4>
+<h4>&#8226; <i>Habitat Risk Assessment</i></h4>
 <table>
-<tr><td><b>Purpose</b></td><td>Estimates the current amount of carbon stored in coastal-marine ecosystems and values the amount of sequestered carbon over time</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/blue_carbon.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/blue_carbon.html" target="_blank">Documentation</a></td></tr>
-<tr><td><b>Use-Cases</b></td><td>Belize</td></tr>
-<tr><td><b>Publications</b></td><td>None</td></tr>
+<tr><td><b>Purpose</b></td><td>Evaluates risks posed to multiple habitats in terms of exposure to human activities and the habitat-specific consequence of that exposure for delivery of environmental services</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.youtube.com/embed/EMOJa-XklB0" target="_blank">Video</a> | <a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/habitat_risk_assessment.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Barbados | Belize | Mozambique | Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Arkema, Katie K., et al. "Embedding ecosystem services in coastal planning leads to better outcomes for people and nature." Proceedings of the National Academy of Sciences 112.24 (2015): 7390-7395. <a href="docs/Arkema_etal_2015_PNAS.pdf" target="_blank">doi:10.1073/pnas.1406483112</a><br>Arkema, Katie K., et al. "Assessing habitat risk from human activities to inform coastal and marine spatial planning: a demonstration in Belize." <i>Environmental Research Letters</i> 9.11 (2014): 114016. <a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">doi:10.1088/1748-9326/9/11/114016</a><br>Guerry, Anne D., et al. "Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning." <i>International Journal of Biodiversity Science, Ecosystem Services & Management</i> 8.1-2 (2012): 107-121. <a href="docs/Guerry_etal_2012_IJBSESM.pdf" target="_blank">doi:10.1080/21513732.2011.647835</a></td></tr>
 </table>
 <p></p>
 <div class="hr dotted clearfix">&nbsp;</div>
-<h4>&#8226; Coastal Vulnerability</h4>
+<h4>&#8226; <i>Marine Water Quality</i></h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Assesses how management and human activities influence the water quality and structure of coastal and estuarine ecosystems</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/marine_water_quality.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Guerry, Anne D., et al. "Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning." <i>International Journal of Biodiversity Science, Ecosystem Services & Management</i> 8.1-2 (2012): 107-121. <a href="docs/Guerry_etal_2012_IJBSESM.pdf" target="_blank">doi:10.1080/21513732.2011.647835</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; <i>Coastal Vulnerability</i></h4>
 <table>
 <tr><td><b>Purpose</b></td><td>Uses geophysical and natural habitat characteristics of coastal landscapes to compare their exposure to erosion and flooding in severe weather</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/coastal_vulnerability.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/coastal_vulnerability.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/coastal_vulnerability.html" target="_blank">Documentation</a></td></tr>
 <tr><td><b>Use-Cases</b></td><td>Barbados | Belize | California | Mozambique | New England | Vancouver Island</td></tr>
 <tr><td><b>Publications</b></td><td>Arkema, Katie K., et al. "Coastal habitats shield people and property from sea-level rise and storms." <i>Nature Climate Change</i> (2013). <a href="docs/Arkema_etal_2013_NCC.pdf" target="_blank">doi:10.1038/nclimate1944</a><br>Langridge, Suzanne M., et al. "Key lessons for incorporating natural infrastructure into regional climate adaptation planning." <i>Ocean & Coastal Management</i> 95 (2014): 189-197. <a href="docs/Langridge_etal_2014_OCM.pdf" target="_blank">doi:10.1016/j.ocecoaman.2014.03.019</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; <i>Overlap Analysis</i></h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Estimates the relative importance of regions for human use; outputs can help decision-makers weigh potential conflicts among spatially-explicit management options that involve new activities or new infrastructure</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/overlap_analysis.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Belize | New England | Vancouver Island</td></tr>
+<tr><td><b>Publications</b></td><td>Kim, Choong-Ki, et al. "Catching the Right Wave: Evaluating Wave Energy Resources and Potential Compatibility with Existing Marine and Coastal Uses." <i>PloS one</i> 7.11 (2012): e47598. <a href="docs/Kim_etal_2012_PLOSONE.pdf" target="_blank">doi:10.1371/journal.pone.0047598</a><br>Griffin, R., et al. "Incorporating the visibility of coastal energy infrastructure into multi-criteria siting decisions." <i>Marine Policy</i>, 62, 218-223. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X15002754" target="_blank">doi:10.1016/j.marpol.2015.09.024</a></td></tr>
+</table>
+<p></p>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4>&#8226; Coastal Blue Carbon</h4>
+<table>
+<tr><td><b>Purpose</b></td><td>Estimates the current amount of carbon stored in coastal-marine ecosystems and values the amount of sequestered carbon over time</td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/coastal_blue_carbon.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Use-Cases</b></td><td>Belize</td></tr>
+<tr><td><b>Publications</b></td><td>None</td></tr>
 </table>
 <p></p>
 <div class="hr dotted clearfix">&nbsp;</div>
 <h4>&#8226; Coastal Protection</h4>
 <table>
 <tr><td><b>Purpose</b></td><td>Quantifies the protective services provided by nearshore habitats in terms of avoided erosion and flood mitigation</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.youtube.com/embed/RZJKZR5JpDc" target="_blank">Video</a> | <a href="http://www.naturalcapitalproject.org/models/coastal_protection.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/coastal_protection.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.youtube.com/embed/RZJKZR5JpDc" target="_blank">Video</a> | <a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/coastal_protection.html" target="_blank">Documentation</a></td></tr>
 <tr><td><b>Use-Cases</b></td><td>Barbados | Belize | California | Vancouver Island</td></tr>
-<tr><td><b>Publications</b></td><td>Guannel, Greg, et al. "Integrated modeling framework to quantify the coastal protection services supplied by vegetation." <i>Journal of Geophysical Research: Oceans</i> (2014). <a href="docs/Guannel_etal_2014_JGR.pdf" target="_blank">doi: 10.1002/2014JC009821</a></td></tr>
+<tr><td><b>Publications</b></td><td>Arkema, Katie K., et al. "Embedding ecosystem services in coastal planning leads to better outcomes for people and nature." Proceedings of the National Academy of Sciences 112.24 (2015): 7390-7395. <a href="docs/Arkema_etal_2015_PNAS.pdf" target="_blank">doi:10.1073/pnas.1406483112</a><br>Guannel, Greg, et al. "Integrated modeling framework to quantify the coastal protection services supplied by vegetation." <i>Journal of Geophysical Research: Oceans</i> (2014). <a href="docs/Guannel_etal_2014_JGR.pdf" target="_blank">doi: 10.1002/2014JC009821</a></td></tr>
 </table>
 <p></p>
 <div class="hr dotted clearfix">&nbsp;</div>
 <h4>&#8226; Finfish Aquaculture</h4>
 <table>
 <tr><td><b>Purpose</b></td><td>Estimates the weight and economic value of Atlantic salmon grown in netpen aquaculture facilities</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/marine_fish_aquaculture.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/marine_fish.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/marine_fish.html" target="_blank">Documentation</a></td></tr>
 <tr><td><b>Use-Cases</b></td><td>Vancouver Island</td></tr>
 <tr><td><b>Publications</b></td><td>None</td></tr>
-</table>
-<p></p>
-<h4>&#8226; Habitat Risk Assessment</h4>
-<table>
-<tr><td><b>Purpose</b></td><td>Evaluates risks posed to multiple habitats in terms of exposure to human activities and the habitat-specific consequence of that exposure for delivery of environmental services</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.youtube.com/embed/EMOJa-XklB0" target="_blank">Video</a> | <a href="http://www.naturalcapitalproject.org/models/habitat_risk.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/habitat_risk_assessment.html" target="_blank">Documentation</a></td></tr>
-<tr><td><b>Use-Cases</b></td><td>Barbados | Belize | Mozambique | Vancouver Island</td></tr>
-<tr><td><b>Publications</b></td><td>Arkema, Katie K., et al. "Assessing habitat risk from human activities to inform coastal and marine spatial planning: a demonstration in Belize." <i>Environmental Research Letters</i> 9.11 (2014): 114016. <a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">doi:10.1088/1748-9326/9/11/114016</a><br>Guerry, Anne D., et al. "Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning." <i>International Journal of Biodiversity Science, Ecosystem Services & Management</i> 8.1-2 (2012): 107-121. <a href="docs/Guerry_etal_2012_IJBSESM.pdf" target="_blank">doi:10.1080/21513732.2011.647835</a></td></tr>
-</table>
-<p></p>
-<div class="hr dotted clearfix">&nbsp;</div>
-<h4>&#8226; Marine Water Quality</h4>
-<table>
-<tr><td><b>Purpose</b></td><td>Assesses how management and human activities influence the water quality and structure of coastal and estuarine ecosystems</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/marine_water_quality.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/marine_water_quality.html" target="_blank">Documentation</a></td></tr>
-<tr><td><b>Use-Cases</b></td><td>Vancouver Island</td></tr>
-<tr><td><b>Publications</b></td><td>Guerry, Anne D., et al. "Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning." <i>International Journal of Biodiversity Science, Ecosystem Services & Management</i> 8.1-2 (2012): 107-121. <a href="docs/Guerry_etal_2012_IJBSESM.pdf" target="_blank">doi:10.1080/21513732.2011.647835</a></td></tr>
-</table>
-<p></p>
-<div class="hr dotted clearfix">&nbsp;</div>
-<h4>&#8226; Overlap Analysis</h4>
-<table>
-<tr><td><b>Purpose</b></td><td>Estimates the relative importance of regions for human use; outputs can help decision-makers weigh potential conflicts among spatially-explicit management options that involve new activities or new infrastructure</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/overlap_analysis.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/overlap_analysis.html" target="_blank">Documentation</a></td></tr>
-<tr><td><b>Use-Cases</b></td><td>Belize | New England | Vancouver Island</td></tr>
-<tr><td><b>Publications</b></td><td>Kim, Choong-Ki, et al. "Catching the Right Wave: Evaluating Wave Energy Resources and Potential Compatibility with Existing Marine and Coastal Uses." <i>PloS one</i> 7.11 (2012): e47598. <a href="docs/Kim_etal_2012_PLOSONE.pdf" target="_blank">doi:10.1371/journal.pone.0047598</a></td></tr>
 </table>
 <p></p>
 <div class="hr dotted clearfix">&nbsp;</div>
 <h4>&#8226; Offshore Wind Energy</h4>
 <table>
 <tr><td><b>Purpose</b></td><td>Measures the electricity generation potential of wind over ocean and large lake surfaces</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/wind_energy.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/wind_energy.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/wind_energy.html" target="_blank">Documentation</a></td></tr>
 <tr><td><b>Use-Cases</b></td><td>New England</td></tr>
-<tr><td><b>Publications</b></td><td>None</td></tr>
+<tr><td><b>Publications</b></td><td>Griffin, R., et al. "Incorporating the visibility of coastal energy infrastructure into multi-criteria siting decisions." <i>Marine Policy</i>, 62, 218-223. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X15002754" target="_blank">doi:10.1016/j.marpol.2015.09.024</a></td></tr>
 </table>
 <p></p>
 <div class="hr dotted clearfix">&nbsp;</div>
 <h4>&#8226; Recreation and Tourism</h4>
 <table>
 <tr><td><b>Purpose</b></td><td>Predicts the spread of person-days of recreation, based on the locations of natural habitats and other features that factor into people’s decisions about where to recreate</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.youtube.com/embed/lHYXhCx-MzI" target="_blank">Video</a> | <a href="http://www.naturalcapitalproject.org/models/recreation.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/recreation.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.youtube.com/embed/lHYXhCx-MzI" target="_blank">Video</a> | <a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/recreation.html" target="_blank">Documentation</a></td></tr>
 <tr><td><b>Use-Cases</b></td><td>Barbados | Belize | California | Mozambique | New England | Vancouver Island</td></tr>
-<tr><td><b>Publications</b></td><td>Wood, Spencer A., et al. "Using social media to quantify nature-based tourism and recreation." <i>Scientific reports</i> 3 (2013). <a href="docs/Wood_etal_2013_NSR.pdf" target="_blank">doi:10.1038/srep02976</a></td></tr>
+<tr><td><b>Publications</b></td><td>Arkema, Katie K., et al. "Embedding ecosystem services in coastal planning leads to better outcomes for people and nature." Proceedings of the National Academy of Sciences 112.24 (2015): 7390-7395. <a href="docs/Arkema_etal_2015_PNAS.pdf" target="_blank">doi:10.1073/pnas.1406483112</a><br>Wood, Spencer A., et al. "Using social media to quantify nature-based tourism and recreation." <i>Scientific reports</i> 3 (2013). <a href="docs/Wood_etal_2013_NSR.pdf" target="_blank">doi:10.1038/srep02976</a></td></tr>
 </table>
 <p></p>
 <div class="hr dotted clearfix">&nbsp;</div>
 <h4>&#8226; Scenic Quality</h4>
 <table>
 <tr><td><b>Purpose</b></td><td>Employs viewshed analysis to estimate the visibility of features or objects such as coastal development, clear-cuts or aquaculture facilities</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/scenic_quality.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/scenic_quality.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/scenic_quality.html" target="_blank">Documentation</a></td></tr>
 <tr><td><b>Use-Cases</b></td><td>Barbados | California | New England | Vancouver Island</td></tr>
-<tr><td><b>Publications</b></td><td>Verutes, Gregory M., et al. "Exploring scenarios of light pollution from coastal development reaching sea turtle nesting beaches near Cabo Pulmo, Mexico." <i>Global Ecology and Conservation</i> (2014): 170-180. <a href="http://www.sciencedirect.com/science/article/pii/S2351989414000274" target="_blank">doi:10.1016/j.gecco.2014.09.001</a></td></tr>
+<tr><td><b>Publications</b></td><td>Griffin, R., et al. "Incorporating the visibility of coastal energy infrastructure into multi-criteria siting decisions." <i>Marine Policy</i>, 62, 218-223. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X15002754" target="_blank">doi:10.1016/j.marpol.2015.09.024</a><br>Verutes, Gregory M., et al. "Exploring scenarios of light pollution from coastal development reaching sea turtle nesting beaches near Cabo Pulmo, Mexico." <i>Global Ecology and Conservation</i> (2014): 170-180. <a href="http://www.sciencedirect.com/science/article/pii/S2351989414000274" target="_blank">doi:10.1016/j.gecco.2014.09.001</a></td></tr>
 </table>
 <p></p>
 <div class="hr dotted clearfix">&nbsp;</div>
 <h4>&#8226; Wave Energy</h4>
 <table>
 <tr><td><b>Purpose</b></td><td>Measures and values the electricity generation potential of ocean waves</td></tr>
-<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/models/wave_energy.html" target="_blank">Summary</a> | <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/wave_energy.html" target="_blank">Documentation</a></td></tr>
+<tr><td><b>Links</b></td><td><a href="http://www.naturalcapitalproject.org/invest/#invest-models" target="_blank">Summary</a> | <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/wave_energy.html" target="_blank">Documentation</a></td></tr>
 <tr><td><b>Use-Cases</b></td><td>California | Vancouver Island</td></tr>
 <tr><td><b>Publications</b></td><td>Kim, Choong-Ki, et al. "Catching the Right Wave: Evaluating Wave Energy Resources and Potential Compatibility with Existing Marine and Coastal Uses." <i>PloS one</i> 7.11 (2012): e47598. <a href="docs/Kim_etal_2012_PLOSONE.pdf" target="_blank">doi:10.1371/journal.pone.0047598</a></td></tr>
 </table>

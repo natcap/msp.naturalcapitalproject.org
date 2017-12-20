@@ -135,92 +135,138 @@ window.onload = function (evt) {
   createDocumentStructure('h4');
 }
 </script>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-787904-11', 'auto');
+  ga('send', 'pageview');
+  
+</script>
+
+<script>
+	function change(top, bottom)
+	{
+	parent.top_frame.location=top;
+	parent.content.location=bottom;
+	} 		
+</script>
+  
 </head>
 <body>
 <h1>Step 4: Analyze (Assess Outcomes)</h1>
 <img src="img/headers/overview_sm.png" align="left"><h2>&nbsp;&nbsp;Overview</h2>
-The "Analyze" step involves assessing ecosystem service outcomes by modeling how change in ecosystems and socio-economic conditions under alternative future scenarios leads to change in environmental benefits and values for people. Results can be spatially explicit and, when possible, should be directly tied to local beneficiaries (i.e., demand for those benefits) and reported using metrics that will resonate with stakeholders and policy-makers.
+The <b>Analyze</b> step uses <a href="javascript:change('top_data.html', 'data.html')"><b>Data</b></a> to assess whether outcomes of environmental changes or management actions proposed during the <a href="javascript:change('top_scenarios.html', 'scenarios.html')"><b>Scenarios</b></a> step meet planning goals outlined during the <a href="javascript:change('top_scope.html', 'scope.html')"><b>Scope</b></a> step.  Analyses quantify how changes in ecosystems and socio-economic conditions under alternative future scenarios lead to spatially explicit changes in environmental condition, ecological function, and benefits to people.  Analyses should create outputs such as maps or summary tables of metrics that allow you to adequately explore the benefits of management options, consequences of climate and other global change, and to identify synergies and tradeoffs between them (<a href="docs/Cowling_etal_2008_PNAS.pdf" target="_blank">Cowling et al. 2008</a>).
+<p></p>
+A variety of "Decision Support Tools" (DSTs) exist to facilitate analyses for marine planning (<a href="http://pacmara.org/tikiwiki/tiki-download_file.php?fileId=233" target="_blank">Coleman et al. 2011</a>, <a href="docs/Stelzenmüller_etal_2013_MP.pdf" target="_blank">Stelzenmüller et al. 2013</a>).  This does <u>not</u> mean that you have to choose a DST.  In reality, many tools serve different purposes and can be used to meet specific planning goals.  As such, DSTs have unique data requirements and create different types of results.  For example, the InVEST overlap analysis tool enables users to visualize the number of human activities in a space (see examples in our <b><a href="javascript:change('top.html', 'gallery.html')">Gallery</a></b>).  Marxan with Zones uses a quasi-optimization approach to highlight areas of greatest value for achieving multiple biodiversity and other objectives in a spatial zoning context (<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0078986" target="_blank">Makino et al. 2013</a>, <a href="http://www.conservationgateway.org/ConservationByGeography/NorthAmerica/Caribbean/science/management/Documents/StKitts-Nevis-Full-Report.pdf" target="_blank">Agostini et al. 2010</a>).  Regardless of whether a DST is used, analyses should produce results that are meaningful to stakeholders participating in the marine planning process and the local beneficiaries who will be affected negatively or positively by policy decisions (<a href="docs/Honey-Roses_Pendleton_2013_ES.pdf" target="_blank">Honey-Rosés and Pendleton 2013</a>, <a href="docs/Ruckelshaus_etal_2014_EE.pdf" target="_blank">Ruckelshaus et al. 2014</a>).
 <p></p>
 <img src="img/approach_Step4.png" usemap="#step4"><br>
 <map name="step4">
-  <area shape="circle" coords="70,93,55" href="scope.html" alt="Scope">
-  <area shape="circle" coords="204,93,55" href="data.html" alt="Data">
-  <area shape="circle" coords="337,93,55" href="scenarios.html" alt="Scenarios">
-  <area shape="circle" coords="631,93,55" href="synthesize.html" alt="Synthesize">
-  <area shape="circle" coords="764,93,55" href="communicate.html" alt="Communicate">
+  <area shape="circle" coords="70,93,55" href="javascript:change('top_scope.html', 'scope.html')">
+  <area shape="circle" coords="204,93,55" href="javascript:change('top_data.html', 'data.html')">
+  <area shape="circle" coords="337,93,55" href="javascript:change('top_scenarios.html', 'scenarios.html')">
+  <area shape="circle" coords="631,93,55" href="javascript:change('top_synthesize.html', 'synthesize.html')">
+  <area shape="circle" coords="764,93,55" href="javascript:change('top_communicate.html', 'communicate.html')">
 </map>
-<a name="goals"></a><div class="hr dotted clearfix">&nbsp;</div>
-<img src="img/headers/products_sm.png" align="left"><h2>&nbsp;&nbsp;Goals</h2>
-<ul>
-<li>Produce early outputs such as maps or summary tables to characterize the current distribution of ecosystem services (ES)</li>
-<li>Using a stakeholder-driven process to compile data and develop scenarios, assess and compare future ES outcomes</li>
-</ul>
-<a name="tips"></a><div class="hr dotted clearfix">&nbsp;</div>
-<img src="img/headers/tips_sm.png" align="left"><h2>&nbsp;&nbsp;Tips</h2>
-<ul>
-<li>Before applying any decison-support tool make sure to understand its underlying assumptions and limitations</li>
-<li>When deciding which tool(s) to use, examine existing use-cases where the tool has already been applied</li>
-<li>Explore our compilation of NatCap MSP use-cases (below) to find a tool that suits your project needs</li>
-</ul>
 <a name="tools"></a><div class="hr dotted clearfix">&nbsp;</div>
-<img src="img/headers/tools_sm.png" align="left"><h2>&nbsp;&nbsp;MSP Decision-Support Tools and Use-Cases</h2>
-Below we list some freely-available MSP analysis toolkits. Click on the tool's name to visit its website or click on the sub-bullet links to learn how the tool was applied as part of an MSP use-case.
+<img src="img/headers/tools_sm.png" align="left"><h2>&nbsp;&nbsp;Marine Planning Decision-Support Tools</h2>
+Below we list some freely-available marine planning analysis tools. Click on the tool's name to visit its website or click on the sub-bullet links to learn how the tool was applied as part of an marine planning use-case.
 <p></p>
 <ol>
-<li><a href="http://www.ariesonline.org" target="_blank"><b>AIRES</b></a>
+<li><a href="javascript:change('top.html', 'marine_invest.html')"><b>Marine InVEST</b></a> - A modular toolset that enables users to quantify, visualize and compare the delivery of key ecosystem services under different scenarios of land, water, and marine uses. Outputs describe natural resources in terms of their biophysical supply, the service they provide humans, or their projected socioeconomic value. These outputs provide a framework for governments, corporations, development banks, conservation organizations and other decision makers to evaluate the impacts of their decisions on the environment and on human well-being. (<a href="docs/Guerry_etal_2012_IJBSESM.pdf" target="_blank">Guerry et al. 2012</a>, <a href="docs/Kim_etal_2012_PLOSONE.pdf" target="_blank">Kim et al. 2012</a>, <a href="docs/Arkema_etal_2013_NCC.pdf" target="_blank">Arkema et al. 2013</a>, <a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">Arkema et al. 2014</a>, <a href="docs/Arkema_etal_2015_PNAS.pdf" target="_blank">Arkema et al. 2015</a>)
+<br>&#8226; Two InVEST marine planning use-cases are described at the <a href="#use-cases">bottom of this page</a>.
+<br>&#8226; Click the following links or image below to watch 3-min intro videos of the InVEST <a href="https://www.youtube.com/embed/EMOJa-XklB0" target="_blank">Habitat Risk Assesment</a>, <a href="https://www.youtube.com/embed/RZJKZR5JpDc" target="_blank">Coastal Protection</a> and Tourism & Recreation model.
+<p></p>
+<ul id="folio_scroller">
+<li><iframe width="600" height="300" src="https://www.youtube.com/embed/lHYXhCx-MzI?rel=0" frameborder="0" allowfullscreen></iframe></li>
+</ul> 
+<p></p><br>
+<li><a href="http://www.ariesonline.org" target="_blank"><b>ARIES</b></a> is a flexible, spatially explicit ecosystem service modeling framework that uses machine learning and reasoning to allow assembly of customized models, specialized for each application context (<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0091001#pone-0091001-g004" target="_blank">Villa et al. 2014</a>).   
 <br>&#8226; <a href="http://www.ariesonline.org/case_studies/madagascar.html" target="_blank">Madagascar</a> - ARIES marine ecosystem services models were developed for Madagascar to study coastal storm regulation and subsistence fisheries. Both of these services are critical in Madagascar due to its reliance on fisheries for protein and its susceptibility to tropical storms forming in the southwest Indian Ocean.
-<li><a href="http://atlantis.cmar.csiro.au" target="_blank"><b>Atlantis</b></a>
+<li><a href="http://atlantis.cmar.csiro.au" target="_blank"><b>Atlantis</b></a> is an ecosystem model that can accommodate complex coupled human-natural systems, including food web and fleet dynamics (<a href="http://www.sciencedirect.com/science/article/pii/S0079661110001321" target="_blank">Link et al. 2010</a>).
 <br>&#8226; <a href="http://www.noaa.gov/iea/Assets/iea/documents/atlantis_ecosystem_model.pdf" target="_blank">Northern Gulf of California (Mexico)</a> - Atlantis was used to estimate the benefits of compliance with existing fisheries regulations in the Northern Gulf of California, including spatial management, seasonal closures, gear restrictions, removal of illegal fishing, buyouts and programs to encourage gear switching, and the combination of these regulations into ‘full enforcement’.
-<li><a href="http://maps.coastalresilience.org/network/" target="_blank"><b>Coastal Resilience</b></a>
+<li><a href="http://maps.coastalresilience.org/network/" target="_blank"><b>Coastal Resilience</b></a> is a global network of practitioners who are applying an approach and web-based mapping tool designed to help communities understand their vulnerability from coastal hazards, reduce their risk and determine the value of nature-based solutions.
 <br>&#8226; <a href="http://maps.coastalresilience.org/gulfmex/" target="_blank">Gulf of Mexico</a> - With its high incidence of storms and hurricanes and valuable ecological and economic resources, the Gulf region is a high-risk area with great potential to demonstrate natural risk reduction solutions. The Coastal Resilience approach and tools have been applied Gulf-wide and at specific sites, including those that help identify where to implement oyster reef restoration to meet social and ecological goals.
-<li><a href="http://www.nceas.ucsb.edu/globalmarine" target="_blank"><b>Cumulative Impacts</b></a>
+<li><a href="http://www.nceas.ucsb.edu/globalmarine" target="_blank"><b>Human Impacts to Marine Ecosystems</b></a> - Estimates and visualizes, for the first time, the global impact humans are having on the ocean's ecosystems (<a href="docs/Halpern_etal_2008_Science.pdf" target="_blank">Halpern et al. 2008</a>).
 <br>&#8226; <a href="https://www.nceas.ucsb.edu/globalmarine/ca_current" target="_blank">California Current</a> - Researchers applied methods developed to map cumulative impacts globally to the California Current using more comprehensive and higher-quality data for 25 human activities and 19 marine ecosystems.
 </ul>
-<li><a href="marine_invest.html"><b>Marine InVEST</b></a>
-<br>&#8226; Two InVEST MSP use-cases are described at the <a href="#use-cases">bottom of this page</a>.
-<li><a href="http://www.afordablefutures.com/services/mimes" target="_blank"><b>MIMES</b></a>
+<li><a href="http://ohi-science.org" target="_blank"><b>Ocean Health Index</b> (OHI)</a> - The OHI is a framework to comprehensively assess the benefits the ocean delivers to people using existing information and can be used to prioritize policy action (<a href="http://www.nature.com/nature/journal/v488/n7413/full/nature11397.html" target="_blank">Halpern et al. 2012</a>, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0117863" target="_blank">Halpern et al. 2015</a>).  Assessments can be conducted at different spatial scales, with methods tailored to the specific context.
+<li><a href="http://oceanwealth.org" target="_blank"><b>Mapping Ocean Wealth</b></a> - Informed by science, communications and policy work, Mapping Ocean Wealth visualizes in quantitative terms all that the ocean does for us today, so that we make smarter investments and decisions for the ocean of tomorrow.
+<li><a href="http://www.uq.edu.au/marxan/" target="_blank"><b>Marxan with Zones</b></a> - See <a href="javascript:change('top_scenarios.html', 'scenarios.html#tools')">Scenario Development Tools</a>
+<li><a href="http://www.afordablefutures.com/services/mimes" target="_blank"><b>MIMES</b></a> is a suite of models that quantify the effects of land and sea use change on ecosystem services and at global, regional, and local levels using input data from GIS sources, time series, etc. to simulate ecosystem components at under different scenarios (<a href="https://www.pdx.edu/sites/www.pdx.edu.sustainability/files/Boumans_Costanza_GWSP%20Chapter_2007.pdf" target="_blank">Boumans and Costanza 2007</a>).
 <br>&#8226; <a href="http://www.eartheconomics.org/FileLibrary/file/Reports/Louisiana/Earth_Economics_Report_on_the_Mississippi_River_Delta_compressed.pdf" target="_blank">Mississippi Delta</a> - Wetlands, Hurricanes and the Economy: The Value of Restoring the Mississippi River Delta
-<li><a href="http://www.wri.org/our-work/project/coastal-capital-economic-valuation-coastal-ecosystems-caribbean/coastal-capital#project-tabs" target="_blank"><b>WRI’s Valuation Methods and Tools</b></a>
+<li><a href="http://www.seasketch.org/" target="_blank"><b>SeaSketch</b></a> - See <a href="scenarios.html#tools">Scenario Development Tools</a>
+<li><a href="http://www.wri.org/our-work/project/coastal-capital-economic-valuation-coastal-ecosystems-caribbean/coastal-capital#project-tabs" target="_blank"><b>WRI’s Valuation Methods and Tools</b></a> is an approach to conducting ecosystem valuation to inform decision making that involves three phases of a valuation effort (scoping, analysis and outreach), with an emphasis on stakeholder engagement in all phases (<a href="http://eprints.soton.ac.uk/362289/" target="_blank">Waite et al. 2014</a>).
 <br>&#8226; <a href="http://www.wri.org/our-work/project/coastal-capital-economic-valuation-coastal-ecosystems-caribbean" target="_blank">Caribbean</a> - WRI’s valuation methods and tools help policymakers, civil society or other interested parties to assess the value to their economies of goods and services provided by coral reefs and to aid in setting coastal management policies. WRI offers tools for tourism/recreation, fisheries, and MPAs.
 </ol>
 <p></p>
-<i>Do you know of other analysis tools that can help inform MSP?  <a href="mailto:gverutes@stanford.edu?Subject=MSP%20Tools" target="_top">E-mail us</a> the details!</i>
+<a name="tips"></a><div class="hr dotted clearfix">&nbsp;</div>
+<img src="img/headers/tips_sm.png" align="left"><h2>&nbsp;&nbsp;Tips</h2>
+Before applying a tool:
+<ul>
+<li>Make sure that the tool's outputs and purpose meet your goals (DSTs are <b>not required</b> for marine planning)</li>
+<li>Assess whether you can collect the necessary data and information to use the tool; and whether you have the expertise to parameterize and run the models</li>
+<li>Understand underlying assumptions and limitations of the tool</li>
+<li>Examine existing examples of how the tool was used</li>
+</ul>
+
+<i>Do you know of other analysis tools that can help inform marine planning?  <a href="mailto:gverutes@stanford.edu?Subject=Marine%20Planning%20Tools" target="_top">E-mail us</a> the details!</i>
 <p></p>
 <a name="faq"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/faq_sm.png" align="left"><h2>&nbsp;&nbsp;Frequently Asked Questions (FAQ)</h2>
-<b>Q: What guidance is available to help me choose from all the different decision-support tools for MSP?</b><br>
-<i>A: In 2012 the Center for Ocean Solutions and PacMARA released a <a href="http://pacmara.org/tikiwiki/tiki-download_file.php?fileId=233" target="_blank"><b>Decision Guide: Selecting decision support tools for marine spatial planning</b></i></a>
+<b>Q: What guidance is available to help me choose from all the different decision-support tools for marine planning?</b><br>
+<i>A: In 2011 the Center for Ocean Solutions and PacMARA released a <a href="http://pacmara.org/tikiwiki/tiki-download_file.php?fileId=233" target="_blank">Decision Guide: Selecting decision support tools for marine spatial planning</a>. Decision-support tools are not needed for all stages or types of marine planning. Depending on the level of quantitative, spatial information desired to support a marine planning process, early iterations or phases of planning can often get underway with open discussions in which scientific information is included, without requiring DST application.</i>
 <p></p>
 <b>Q: Which metrics are most effective for highlighting future change in the distribution and delivery of ecosystem services to people?</b><br>
-<i>A: It depends largely on what ecosystem service and function are under consideration.  Stakeholder engagement can elucidate the source(s) of environmental change, how these changes affect ecosystem function, and what ecological outputs will change.  Once these connections become clear, it can then be useful to talk about metrics like economic valuation.  This process of working from change, through function, and then to ecological outcomes to people is typically more important than any final measures of ecosystem services or value.</i>
+<i>A: It depends largely on what ecosystem service and function are under consideration. During the scoping step stakeholders should elucidate the dependencies on ecosystems, potential sources of environmental change, how these changes affect ecosystem function, and thus how ecosystem services might change. Once these connections have been hypothesized, it can be useful to measure ecosystems and their services in biophysical and economic terms. This process of working from change, through function, and then to ecological outcomes for people is important.</i>
 <p></p>
-<b>Q: How exactly can InVEST models be used to facilitate the MSP process?</b><br>
-<i>A: Visit our <a href="marine_invest.html"><b>Marine InVEST page</b></a> to learn about the models -or- read through the NatCap use-case summaries at the bottom of this and subsequent pages to learn how different models in the InVEST toolkit were applied for MSP.</i>
+<b>Q: How exactly can InVEST models be used to facilitate the marine planning process?</b><br>
+<i>A: Visit our <a href="javascript:change('top.html', 'marine_invest.html')">Marine InVEST page</a> to learn about the models -or- read through the NatCap use-case summaries at the bottom of this and subsequent pages to learn how different models in the InVEST toolkit were applied for marine planning.</i>
+<p></p>
+<b>Q: To show the value of marine planning...has anyone modeled what an ocean region would look like with and without marine planning?</b><br>
+<i>A: A recent article (<a href="docs/Arkema_etal_2015_PNAS.pdf" target="_blank">Arkema et al. 2015</a>) compared the current distribution of ecosystem services (without integrated marine planning) to three alternative futures of human use/management in the Belize coastal zone (Fig 2).  It also estimated ecosystem service returns for three key services (tourism, lobster and coastal protection) based on multiple rounds of stakeholder consultations (Fig 4).  In the United States, <a href="White_etal_2012_PNAS.pdf" target="_blank">White et al. (2012)</a> conducted a wind energy study in Massachusetts.</i>
 <p></p>
 <b>Q: If I have questions about using InVEST models or run into problems, where can I get help?</b><br>
-<i>A: First, check the <a href="http://data.naturalcapitalandresilienceplatform.org/nightly-build/release_tip/release_tip/documentation/" target="_blank"><b>InVEST user’s guide</b></a> chapter that describes your particular model of interest.  Each chapter covers the theory behind the model as well as detailed information about data formatting requirements and how to interpret the results (model outputs).  Within InVEST, each model includes sample input data that offers a template for how input data should be formatted.  Also, the <a href="http://ncp-yamato.stanford.edu/natcapforums/" target="_blank"><b>NatCap User Help Forum</b></a> allows users to converse with other InVEST users and NatCap staff.</i>
+<i>A: First, check the <a href="http://data.naturalcapitalproject.org/nightly-build/invest-users-guide/html/" target="_blank">InVEST User's Guide</a> chapter that describes your particular model of interest.  Each chapter covers the theory behind the model as well as detailed information about data formatting requirements and how to interpret the results (model outputs).  Within InVEST, each model includes sample input data that offers a template for how input data should be formatted.  <a href="http://ncp101.class.stanford.edu/" target="_blank">NCP-101</a>, our online course (MOOC), includes brief videos introducing InVEST models along with natural capital fundamentals and hands-on exercises to help you learn more about our approach and tools.  Also, the <a href="http://forums.naturalcapitalproject.org/" target="_blank">NatCap User Help Forum</a> allows users to converse with other InVEST users and NatCap staff.</i>
 <p></p>
 <a name="links"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/links_sm.png" align="left"><h2>&nbsp;&nbsp;Links</h2>
 <ul>
+<li>Arkema, Katie K., et al. "Embedding ecosystem services in coastal planning leads to better outcomes for people and nature." Proceedings of the National Academy of Sciences 112.24 (2015): 7390-7395. <a href="docs/Arkema_etal_2015_PNAS.pdf" target="_blank">doi:10.1073/pnas.1406483112</a></li>
+<li>Coleman, H., et al. "Decision guide: selecting decision support tools for marine spatial planning." Center for Ocean Solutions, Stanford University, Palo Alto, CA. (2011). Available from: <a href="http://pacmara.org/tikiwiki/tiki-download_file.php?fileId=233" target="_blank">http://pacmara.org/tikiwiki/tiki-download_file.php?fileId=233</a></li>
+<li>Cowling, Richard M., et al. "An operational model for mainstreaming ecosystem services for implementation." <i>Proceedings of the National Academy of Sciences</i> 105.28 (2008): 9483-9488. <a href="docs/Cowling_etal_2008_PNAS.pdf" target="_blank">doi: 10.1073/pnas.0706559105</a></li>
 <li>Guerry, Anne D., et al. "Modeling benefits from nature: using ecosystem services to inform coastal and marine spatial planning." <i>International Journal of Biodiversity Science, Ecosystem Services & Management</i> 8.1-2 (2012): 107-121. <a href="docs/Guerry_etal_2012_IJBSESM.pdf" target="_blank">doi:10.1080/21513732.2011.647835</a></li>
+<li>Halpern, Benjamin S., et al. "A global map of human impact on marine ecosystems." Science 319.5865 (2008): 948-952. <a href="docs/Halpern_etal_2008_Science.pdf" target="_blank">doi:10.1126/science.1149345</a></li>
+<li>Honey-Rosés, Jordi, and Linwood H. Pendleton. "A demand driven research agenda for ecosystem services." <i>Ecosystem Service</i> (2013): 160-162. <a href="docs/Honey-Roses_Pendleton_2013_ES.pdf" target="_blank">doi:10.1016/j.ecoser.2013.04.007</a></li>
 <li>Kim, Choong-Ki, et al. "Catching the Right Wave: Evaluating Wave Energy Resources and Potential Compatibility with Existing Marine and Coastal Uses." <i>PloS one</i> 7.11 (2012): e47598. <a href="docs/Kim_etal_2012_PLOSONE.pdf" target="_blank">doi:10.1371/journal.pone.0047598</a></li>
-<li>Stelzenmüller, Vanessa, et al. "Practical tools to support marine spatial planning: a review and some prototype tools." <i>Marine Policy</i> 38 (2013): 214-227. <a href="http://www.sciencedirect.com/science/article/pii/S0308597X12001364" target="_blank">doi:10.1016/j.marpol.2012.05.038</a></li>
-<li>White, Crow, Benjamin S. Halpern, and Carrie V. Kappel. "Ecosystem service tradeoff analysis reveals the value of marine spatial planning for multiple ocean uses." <i>Proceedings of the National Academy of Sciences</i> 109.12 (2012): 4696-4701. <a href="http://www.pnas.org/content/109/12/4696.short" target="_blank">doi: 10.1073/pnas.1114215109</a></li>
-<li><a href="http://ncp101.class.stanford.edu/" target="_blank"><b>NCP101</b></a> - A free online course developed by NatCap; modules 2-4 allow learners to apply select marine InVEST models using real data from Belize</li>
-<li><a href="http://www.marineplanning.org/Case_Studies/Case_Studies.html" target="_blank"><b>Marine Planning.org</b></a> - Case studies illustrating the use of MSP and ecosystem-based management (EBM) to address multiple objectives 
-<li><a href="http://www.ebmtools.org/" target="_blank"><b>EBM Tools Network</b></a> - Offers tools, training and webinars on coastal and marine planning and management</li>
+<li>Link, Jason S., Elizabeth A. Fulton, and Robert J. Gamble. "The northeast US application of ATLANTIS: a full system model exploring marine ecosystem dynamics in a living marine resource management context." <i>Progress in Oceanography</i> 87.1 (2010): 214-234. <a href="http://www.sciencedirect.com/science/article/pii/S0079661110001321" target="_blank">doi:10.1016/j.pocean.2010.09.020</a></li>
+<li>Makino, Azusa, et al. "Incorporating conservation zone effectiveness for protecting biodiversity in marine planning." <i>PloS one</i> 8.11 (2013): e78986. <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0078986" target="_blank">doi:10.1371/journal.pone.0078986</a></li>
+<li>Stelzenmüller, Vanessa, et al. "Practical tools to support marine spatial planning: a review and some prototype tools." <i>Marine Policy</i> 38 (2013): 214-227. <a href="docs/Stelzenmüller_etal_2013_MP.pdf" target="_blank">doi:10.1016/j.marpol.2012.05.038</a></li>
+<li>Villa, Ferdinando, et al. "A methodology for adaptable and robust ecosystem services assessment." <i>PloS one</i> 9.3 (2014): e91001. <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0091001#pone-0091001-g004" target="_blank">doi:10.1371/journal.pone.0091001</a></li>
+<li>White, Crow, Benjamin S. Halpern, and Carrie V. Kappel. "Ecosystem service tradeoff analysis reveals the value of marine spatial planning for multiple ocean uses." <i>Proceedings of the National Academy of Sciences</i> 109.12 (2012): 4696-4701. <a href="docs/White_etal_2012_PNAS.pdf" target="_blank">doi: 10.1073/pnas.1114215109</a></li>
+<li><a href="http://ncp101.class.stanford.edu/" target="_blank">NCP-101</a> - A free online course developed by NatCap; modules 2-4 enable learners to apply select marine InVEST models using real data from Belize</li>
+<li><a href="http://www.marineplanning.org/Case_Studies/Case_Studies.html" target="_blank">Marine Planning.org</a> - Case studies illustrating the use of marine planning and ecosystem-based management (EBM) to address multiple objectives 
+<li><a href="http://www.ebmtools.org/" target="_blank">EBM Tools Network</a> - Offers tools, training and webinars on coastal and marine planning and management</li>
 </ul>
 <p></p>
 <a name="use-cases"></a><div class="hr dotted clearfix">&nbsp;</div>
 <img src="img/headers/use-cases_sm.png" align="left"><h2>&nbsp;&nbsp;Use-Cases</h2>
 Use the expand [+] button to learn more about this analyze step in the context of select NatCap use-cases.<a class="float right" href="#">top</a>
 <p></p>
+<h4>Vancouver Island</h4>
+<p></p>
+<ul id="folio_scroller">
+<li><iframe width="600" height="300" src="https://www.youtube.com/embed/F5ZY-QtWkRM" frameborder="0" allowfullscreen></iframe></li>
+</ul> 
+<p></p><br>
 <h4>California</h4>
-The <a href="marine_invest.html"><b>InVEST coastal vulnerability model</b></a> was used to identify where coastal ecosystems reduce the number of people exposed to storms and future sea level rise along the California coast.  These areas were further analyzed at the county level to highlight which habitats play the biggest role in reducing numbers of people at risk and thus where to prioritize conservation of these ecosystems.  This early information provided local agencies with a process to better determine how their coasts and oceans can be managed more sustainably.  Additional InVEST models are now being applied to map the full suite of benefits provided by coastal-marine ecosystems, including recreation opportunities, scenic quality and watershed services.
+The <a href="javascript:change('top.html', 'marine_invest.html')">InVEST coastal vulnerability model</a> was used to identify where coastal ecosystems reduce the number of people exposed to storms and future sea level rise along the California coast.  These areas were further analyzed at the county level to highlight which habitats play the biggest role in reducing numbers of people at risk and thus where to prioritize conservation of these ecosystems.  This early information provided local agencies with a process to better determine how their coasts and oceans can be managed more sustainably (<a href="docs/Langridge_etal_2014_OCM.pdf" target="_blank">Langridge et al. 2014</a>).  Additional InVEST models are now being applied to map the full suite of benefits provided by coastal-marine ecosystems, including recreation opportunities, scenic quality and watershed services.
 <p></p>
 <h4>Belize</h4>
-A risk assessment was conducted in coastal Belize to map impacts to habitats from eight coastal-marine human uses.  Based on the amount of "functional" habitat (healthy ecosystems that are capable of providing benefits to people), three <a href="marine_invest.html"><b>InVEST models</b></a> were applied to map, measure and value future ecosystem service delivery, including coastal protection, fisheries, and tourism / recreation.  Model results were used to illustrate where human activities pose the greatest risk to ecosystems and the resulting changes in ecosystem service values (both biophysical and economic).
+In coastal Belize, the question we were addressing in the <b>Analyze</b> step was "where should we site human activities to enhance ecosystem services and reduce the risk to habitats that provide these services?"  We used a classic risk assessment approach (see <a href="docs/Arkema_etal_2014_EL.pdf" target="_blank">Arkema et al. 2014</a> for more details about the InVEST habitat risk assessment model) to map cumulative risk to habitats from eight coastal-marine human uses.  To assess delivery of services in the current and several future management scenarios, we assumed a relationship between levels of risk to habitats and the amount of "functional" habitat (healthy ecosystems that are capable of providing benefits to people, Arkema et al. in review).  We used estimates of the area of functional habitat in each analysis unit and planning region as inputs into three <a href="javascript:change('top.html', 'marine_invest.html')">InVEST models</a> coastal protection, fisheries, and tourism services. Model results were used to illustrate where human activities pose the greatest risk to ecosystems and the resulting changes in ecosystem service values (both biophysical and economic). 
 <p></p>
 <ul id="folio_scroller">
 <li><span>Spatial representations of risk to three habitats were used to assess ecosystem service outcomes across the nine coastal planning regions of Belize</span><img alt="" src="img/analyze_bz_folio_1.png" /></a></li>
