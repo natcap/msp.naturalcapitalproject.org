@@ -6,5 +6,6 @@ pipelines:
         - step:
             script:
               - echo ${GOOGLE_SERVICE_ACC_KEY} > client-secret.json
+              - gcloud components update --quiet  # Update gcloud but don't prompt
               - gcloud auth activate-service-account --key-file=client-secret.json
               - gsutil -m rsync -dr site gs://msp.naturalcapitalproject.org
